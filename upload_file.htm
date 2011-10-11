@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" id="theme">
+<link rel="stylesheet" href="stylesheets/jquery.fileupload-ui.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.netgrow.com.au/assets/files/jquery_plugins/jquery.dump.js"></script>
+<script type="text/javascript" src="javascripts/jquery.fileupload.js"></script>
+<script type="text/javascript" src="javascripts/jquery.fileupload-ui.js"></script>
+<script>
+$(function () {
+  $('#drag_and_drop').text('選擇檔案或拖放檔案至此');
+  $('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    beforeSend: function (event, files, index, xhr, handler, callback) {
+      handler.uploadRow.find('.file_upload_start button').hide();
+      callback();
+    },
+    parseResponse: function (xhr) {
+        if (typeof xhr.responseText !== 'undefined') {
+            return xhr.responseText;
+        } else {
+            // Instead of an XHR object, an iframe is used for legacy browsers:
+            return xhr.contents().text();
+        }
+    },
+    onAbort: function (event, files, index, xhr, handler) {
+      handler.removeNode(handler.uploadRow);
+      top.frames[0].location.reload();
+    },
+    buildUploadRow: function (files, index) {
+      var baseFileName = files[index].name.replace(/^.*[\/\\]/, '');
+      var encodedFileName = encodeURIComponent(baseFileName);
+      return $('#template_upload').clone().removeAttr('id')
+             .attr('data-file-id', encodedFileName)
+             .find('.file_upload_name').text(baseFileName)
+             .closest('tr');
+    },
+    buildDownloadRow: function (file) {
+      top.frames[0].location.reload();
+    }
+  });
+});
+</script>
+</head>
+<body background="images/bg.gif">
+<form id="file_upload" method="POST" target="download" enctype="multipart/form-data" action="cgi-bin/upload.cgi" >
+  <input name="file" type="file" multiple>
+  <button>傳送</button>
+  <div id="drag_and_drop"></div>
+</form>
+<table id="files">
+  <tr id="template_upload" style="display:none;">
+    <td class="file_upload_preview"></td>
+    <td class="file_upload_name"></td>
+    <td class="file_upload_progress"><div></div></td>
+    <td class="file_upload_start">
+      <button class="ui-button ui-widget ui-state-default ui-corner-all" title="Start">
+        <span class="ui-icon ui-icon-circle-arrow-e">Start</span>
+      </button>
+    </td>
+    <td class="file_upload_cancel">
+      <button class="ui-button ui-widget ui-state-default ui-corner-all" title="Cancel">
+        <span class="ui-icon ui-icon-cancel">Cancel</span>
+      </button>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
