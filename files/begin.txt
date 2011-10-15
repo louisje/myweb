@@ -1,0 +1,137 @@
+Message-Id: <9204131416.AA28109@cs.kun.nl>
+To: usenet.hist@weber.ucsd.edu
+Cc: lwj@cs.kun.nl
+From: Luc Rooijakkers <lwj@cs.kun.nl>
+Subject: GNU announcement
+Date: Mon, 13 Apr 92 16:16:30 +0200
+Sender: lwj@cs.kun.nl
+
+Is someone interested in this? I didn't get anything else from Rich, so
+presumably he hasn't got more. Didn't rms get flamed for this? One would
+expect so, but perhaps usenet was a nicer place in those days (I wasn't
+there yet by a long shot).
+
+------- Forwarded Message
+
+From: rsk@gynko.circ.upenn.edu (Rich Kulawiec)
+Message-Id: <9203041402.AA10807@gynko.circ.upenn.edu>
+Subject: Re: Gnu/OS (was Re: UP)
+To: lwj@cs.kun.nl
+Date: Wed, 4 Mar 92 9:02:31 EST
+Organization: Cardiothoracic Imaging Research Center
+
+>Could you possible send me the complete message? I would like to read it
+>in its entirety. If you have additional discussion (responses etc) on
+>that subject I would like to read those too.
+
+Sure, no problem.  I knew there was a reason I kept this all these years! :-)
+
+I'll also check through the archives to see if I have any of the contemporary
+comments on it -- a quick scan this morning over coffee didn't reveal anything,
+but I was barely awake, so perhaps I should try again when I'm more alive.
+
+Cheers,
+Rich
+
+> From CSvax:pur-ee:inuxc!ixn5c!ihnp4!houxm!mhuxi!eagle!mit-vax!mit-eddie!RMS@MIT-OZ
+> From: RMS%MIT-OZ@mit-eddie
+> Newsgroups: net.unix-wizards,net.usoft
+> Subject: new UNIX implementation
+> Date: Tue, 27-Sep-83 12:35:59 EST
+> Organization: MIT AI Lab, Cambridge, MA
+> 
+> Free Unix!
+> 
+> Starting this Thanksgiving I am going to write a complete
+> Unix-compatible software system called GNU (for Gnu's Not Unix), and
+> give it away free to everyone who can use it.  Contributions of time,
+> money, programs and equipment are greatly needed.
+> 
+> To begin with, GNU will be a kernel plus all the utilities needed to
+> write and run C programs: editor, shell, C compiler, linker,
+> assembler, and a few other things.  After this we will add a text
+> formatter, a YACC, an Empire game, a spreadsheet, and hundreds of
+> other things.  We hope to supply, eventually, everything useful that
+> normally comes with a Unix system, and anything else useful, including
+> on-line and hardcopy documentation.
+> 
+> GNU will be able to run Unix programs, but will not be identical
+> to Unix.  We will make all improvements that are convenient, based
+> on our experience with other operating systems.  In particular,
+> we plan to have longer filenames, file version numbers, a crashproof
+> file system, filename completion perhaps, terminal-independent
+> display support, and eventually a Lisp-based window system through
+> which several Lisp programs and ordinary Unix programs can share a screen.
+> Both C and Lisp will be available as system programming languages.
+> We will have network software based on MIT's chaosnet protocol,
+> far superior to UUCP.  We may also have something compatible
+> with UUCP.
+> 
+> 
+> Who Am I?
+> 
+> I am Richard Stallman, inventor of the original much-imitated EMACS
+> editor, now at the Artificial Intelligence Lab at MIT.  I have worked
+> extensively on compilers, editors, debuggers, command interpreters, the
+> Incompatible Timesharing System and the Lisp Machine operating system.
+> I pioneered terminal-independent display support in ITS.  In addition I
+> have implemented one crashproof file system and two window systems for
+> Lisp machines.
+> 
+> 
+> Why I Must Write GNU
+> 
+> I consider that the golden rule requires that if I like a program I
+> must share it with other people who like it.  I cannot in good
+> conscience sign a nondisclosure agreement or a software license
+> agreement.
+> 
+> So that I can continue to use computers without violating my principles,
+> I have decided to put together a sufficient body of free software so that
+> I will be able to get along without any software that is not free.
+> 
+> 
+> How You Can Contribute
+> 
+> I am asking computer manufacturers for donations of machines and money.
+> I'm asking individuals for donations of programs and work.
+> 
+> One computer manufacturer has already offered to provide a machine.  But
+> we could use more.  One consequence you can expect if you donate
+> machines is that GNU will run on them at an early date.  The machine had
+> better be able to operate in a residential area, and not require
+> sophisticated cooling or power.
+> 
+> Individual programmers can contribute by writing a compatible duplicate
+> of some Unix utility and giving it to me.  For most projects, such
+> part-time distributed work would be very hard to coordinate; the
+> independently-written parts would not work together.  But for the
+> particular task of replacing Unix, this problem is absent.  Most
+> interface specifications are fixed by Unix compatibility.  If each
+> contribution works with the rest of Unix, it will probably work
+> with the rest of GNU.
+> 
+> If I get donations of money, I may be able to hire a few people full or
+> part time.  The salary won't be high, but I'm looking for people for
+> whom knowing they are helping humanity is as important as money.  I view
+> this as a way of enabling dedicated people to devote their full energies to
+> working on GNU by sparing them the need to make a living in another way.
+> 
+> 
+> For more information, contact me.
+> Arpanet mail:
+>   RMS@MIT-MC.ARPA
+> 
+> Usenet:
+>   ...!mit-eddie!RMS@OZ
+>   ...!mit-vax!RMS@OZ
+> 
+> US Snail:
+>   Richard Stallman
+>   166 Prospect St
+>   Cambridge, MA 02139
+> 
+> 
+
+------- End of Forwarded Message
+

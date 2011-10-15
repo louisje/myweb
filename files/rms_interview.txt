@@ -1,0 +1,331 @@
+µo«H¤H: cschang@bbs.ee.ntu.edu.tw (§Ú©È¿ß!), ¬ÝªO: linux
+¼Ð  ÃD: [Fow] LinuxSoft»PRichard Stallmanªº³X½Í¤¤Ä¶
+µo«H¯¸: ¥x¤j¹q¾÷ Maxwell BBS (Sun Apr  4 03:38:02 1999)
+Âà«H¯¸: maple!news.cs.nthu!freebsd.ntu!bbs.ee.ntu!Maxwell
+
+   Freedom Baby! Yeah.
+
+   Richard Stallman, hacker god and creative force that gave birth to the
+   FreeSoftware/Open Source philosophy was interviewed by Linuxsoft.net
+   at the LinuxWorld Expo in San Jose, California, March 2nd, 1999.
+
+   1999¦~¤T¤ë¤G¤é¡A¦b¥[¦{San JoseªºLinuxWorld Expo·|³õ¡ALinuxsoft.net³X°Ý
+   ¤FRichard Stallman¡A¥L¬Oµ{¦¡³]­pª±®a¤§¯«¡A¤]¬OÅý¦Û¥Ñ³nÅé/¶}©ñ·½½X³nÅé
+   ­õ¾Ç½Ï¥Íªº³Ð³y­ì¤O¡C
+
+   [LSFT] Whis is the background of the 'GNU' project, your role in the
+   free operating system concept and how Linux evolved from it.
+
+   [LSFT] GNU­pµeªº­I´º¡A¥H¤Î§A­Ó¤H¦b¦Û¥Ñ§@·~¨t²Î·§©À¤¤ªº¨¤¦â¦U¬O¤°»ò©O?
+   Linux¤S¬O¦p¦ó±q¨ä¤¤µo®i¥X¨Óªº?
+
+   [STALLMAN] I had started a project 'GNU', to build a free operating
+   system. Well, we were almost finished in 1991. We had most of the
+   system. One essential piece was still missing, which was the kernel.
+   We had started writing a kernel just recently. Turns out, the design
+   we used was very hard to debug, it was a very advanced kind of design,
+   and I hoped it would save us work, because it enabled us to use an
+   existing component as part of it, but it turned out hard to debug. It
+   was multiple processes sendingmessages to each other asynchronously.
+   Anyway, I took up years.
+
+   [STALLMAN] §Ú¤§«e¤w¶}©l¤@­ÓGNU­pµe¡A¨Ó«Ø³y¤@­Ó¦Û¥Ñªº§@·~¨t²Î¡C§c¡A
+   1991¦~®É§Ú­Ì´X¥G§¹¦¨¤F¡C§Ú­Ì¤w¦³¤F¤j³¡¥÷ªº¨t²Î¡C¦ý¤´¯Ê¤Ö¤@­Ó­«­nªº³¡
+   ¥÷¡A´N¬O®Ö¤ß¡C§Ú­Ì³Ìªñ¶}©l¼g³o­Ó®Ö¤ßµ{¦¡¡Cµ²ªGµo²{§Ú­Ìªº³]­p«ÜÃø¥[
+   ¥H°£¿ù¡A¥¦¬OºØ«Ü¥ý¶iªº³]­p¡A¦Ó§Ú§Æ±æ¥¦¯à¬°§Ú­Ì¬Ù¤O¡A¦]¬°¥¦Åý§Ú­Ì¯à¨Ï
+   ¥Î¤@­Ó²{¦sªº²Õ¦¨µ{¦¡¨Ó·í§@¨t²Îªº¤@³¡¥÷¡A¦ý«oµo²{Ãø¥H°£¿ù¡C¦h­Óµ{§Ç¥H
+   ¤@ºØ«D¦P¨Bªº¤è¦¡©¼¦¹¶Ç°e°T®§¡CÁ`¦Ó¨¥¤§¡A³oªá¤F§Ú¦n´X¦~ªº®É¶¡¡C
+
+   In the meanwhile Linus Torvalds wrote a kernel and he called his
+   kernel Linux. Well, he didn't do that for the GNU Project, he just
+   decided to write a kernel. Anyway, then, people who saw his kernel
+   said, "Well Lets see what we can put together with this kernel, see if
+   we can make a whole system."
+
+   ¦b³o¦P®ÉLinus Torvalds¼g¤F¤@­Ó®Ö¤ß¡A¥LºÙ¥Lªº®Ö¤ß¬°Linux¡C§c¡A³o®Ö¤ß­ì
+   ¤£¬O¬°GNU­pµe¼gªº¡A¥L¥u¬O¨M©w¼g­Ó®Ö¤ß¡CÁ`¤§¡A«á¨Ó¨º¨Ç¬Ý¨ì¥Lªº®Ö¤ßªº¤H
+   »¡¡A"Åý§Ú­Ì¬Ý¬Ý¦³¤°»ò¯à¸ò³o®Ö¤ß¥[¦b¤@°_ªº¡A»¡¤£©w§Ú­Ì¯à³y¥X¤@­Ó§¹¾ãªº
+   ¨t²Î¡C"
+
+   Lo and behold, everything they needed was there. What they found was
+   the GNU System. It wasn't all written by us, because since we had a
+   higher order goal, "We're gonna make a whole system", which means,
+   probably hundreds of programs. So we had to do our best, to find as
+   many existing programs as we could that could be pressed into service,
+   so that we wouldn't have to write every one of these components
+   ourselves. We found what we could and we wrote whatever there was or
+   we recruited somebody to write it.
+
+   µ²ªG§A¬Ý¡A¥L­Ì©Ò­nªº¨C¼ËªF¦è´Nªñ¦b²´«e¡C¥L­Ì§ä¨ìªº´N¬OGNU¨t²Î¡C³o¨t²Î
+   ¤£¬O¥þ¥Ñ§Ú­Ì¼g¦¨ªº¡A¦]¬°§Ú­Ì¦³­Ó§ó°ª¼hªº¥Ø¼Ð¡A"§Ú­Ì­n³y¥X¤@¾ã­Ó¨t²Î"¡A
+   ¦Ó³oªí¥Üªº¬O¤j¬ù¼Æ¦Ê­Óµ{¦¡¡C©Ò¥H§Ú­Ì¥u¦³ºÉ¤O¦Ó¬°¡AºÉ¥i¯à¦a¥h§ä¥X³\¦h²{
+   ªºµ{¦¡¥[¤J¨t²Î¤¤¡A³o¼Ë§Ú­Ì´N¤£¥Î¦Û¤v¨Ó¼g¨C¤@­Ó²Õ¦¨µ{¦¡¡C§Ú­ÌºÉ¥i¯àªº¥h
+   §ä¡A¥h¼g¡A©ÎªÌ¼x¥l¤H¤â¨Ó¼gµ{¦¡¡C
+
+   So really this conference is about the GNU System, but they're calling
+   it Linux, and whats happened is, because those people put everything
+   else together with Linux, didn't realize what they were doing was
+   taking the GNU system, nobody knows that now.
+
+   ©Ò¥H¨Æ¹ê¤W³o·|Ä³¬OÃö©óGNU¨t²Î¡A¦ý¬O¥L­Ì¥s¥¦Linux¡A¦Óµ²ªG´N¬O¡A¦]¬°³o¨Ç
+   ±N¨ä¥L¨C¤@³¡¥÷»PLinux¥[¦b¤@°_ªº¤H¡A¥L­Ì¤£ª¾¹D¥L­Ì©Ò°µªº´N¬O¥ÎGNU¨t²Î¡A
+   ²{¦b¨S¦³¤Hª¾¹D³o¦^¨Æ¡C
+
+   [LSFT] The Free Software concept is hard for some people to
+   understand. How does a programmer do this and still feed his family.
+
+   [LSFT] ¦Û¥Ñ³nÅéªº·§©À«ÜÃøÅý¤H­ÌÁA¸Ñ¡Cµ{¦¡³]­p®v¦p¦ó¦b¼g¦Û¥Ñ³nÅé¤§¾l¤S
+   ¯à¾i®a¬¡¤f©O?
+
+   [STALLMAN] You're confusing two totally unrelated issues. Totally
+   separate issues.
+
+   [STALLMAN] §A§â¨â­ÓµLÃöªº¨Æ§Ë²V¤F¡C¥¦­Ì¬O§¹¥þ¤ÀÂ÷ªº¨Æ¡C
+
+   It's not unusual to confuse them. First of all, the thing to realize
+   is free software has nothing to do with money. It's about freedom. And
+   the reason I started the project to make a free operating system is so
+   we could have freedom and still use computers.
+
+   §Ë²V³o¨â¥ó¨Æ¨Ã¤£¨u¨£¡C­º¥ý­nÁA¸Ñªº¬O¡A¦Û¥Ñ³nÅé¸ò¿ú¬O§¹¥þµLÃöªº¡C¥¦¥uÃö
+   «Y¨ì¦Û¥Ñ¡C§Úµo°_GNU­pµeªº­ì¦]´N¬O­n«Ø³y¤@­Ó¦Û¥Ñªº§@·~¨t²Î¡A¨Ï±o§Ú­Ì¯à¨Ï
+   ¥Î¹q¸£¡AÁÙ¯à¾Ö¦³¦Û¥Ñ¡C
+
+   If you're using a non free program, you've given up your freedom, your
+   freedoms been taken away by the owner of the software, who has power
+   to control what you can do. And it's a particularly horrible kind of
+   power, because it's a power to prohibit cooperation. To say, "Your're
+   not allowed to share the knowledge you use, with him or her," that's
+   monstrous.
+
+   ­Y§A¨Ï¥Î¤@­Ó«D¦Û¥Ñ³nÅé¡A§A´N¬O¦b©ñ±ó¦Û¤vªº¦Û¥Ñ¡A§Aªº¦Û¥Ñ¤w³Q³nÅéªº©Ò¦³
+   ªÌ®³¨«¡A¦Ó¥L¦³±±¨î§A©Ò§@©Ò¬°ªº¤O¶q¡C¯S§O¦a¡A³o¬O¤@ºØ«Ü¥i©Èªº¤O¶q¡A¦]¬°
+   ³o¬O¤@ºØ§«Ãª¹Îµ²ªº¤O¶q¡C³o¼Ë»¡§a! "§A¤£­ã»P¥L¡A©Î¦o¡A¤À¨É§A©Ò¥Îªºª¾ÃÑ"
+   ¡A¦Ó¨º¬O¤£¦X±¡²zªº¡C
+
+   It's basically divide and conquer, saying, "You're not allowed to form
+   a community, that you must be separate alienated individuals, who
+   can't help each other. I started the GNU Project to change that,
+   because as long as your using proprietary software, you are in that
+   bad situation. To get out of it, you have to have free software. So I
+   said, "Let's make a free operating system so we can do everything we
+   have to do, with free software."
+
+   °ò¥»¤W³o¬O¤@ºØ¤À¤Æ¦A¦U­ÓÀ»¯}ªºµ¦²¤¡A¦n¤ñ»¡¡A"§A­Ì¤£­ã§Î¦¨¤@­Ó¦@¦PÅé¡A
+   §A­Ì±o­n¬O¤ÀÂ÷²¨»·ªº­ÓÅé¡A½Ö¤]¤£¯àÀ°½Ö¡C" §Úµo°_GNU­pµe¨Ó§ïÅÜ³oºØ±¡ªp¡A
+   ¦]¬°¥u­n§A¤@ª½¨Ï¥Î¨ã©Ò¦³Åvªº³nÅé¡A§A´N¸¨¦b¤U­·¡C­n²æÂ÷³oºØ¤£§Qªº§x¹Ò¡A
+   §A´N±o¨Ï¥Î¦Û¥Ñ³nÅé¡C©Ò¥H§Ú»¡¡A"§Ú­Ì¨Ó«Ø³y¤@­Ó¦Û¥Ñªº§@·~¨t²Î¡A¦nÅý§Ú­Ì
+   ¯à¥Î¦Û¥Ñªº³nÅé¨Ó°µ§Ú­Ì­n°µªº¨Æ¡C"
+
+   So we've succeeded. We've produced the GNU system. Even though people
+   call it Linux, they still have the benefit of freedom when they use
+   this system. But, when they put a proprietary program on top of it,
+   it's as if they escape from the master, and what do they do? Somebody
+   says, "Hey, I'll give you something convenient if you buckle a chain
+   on." So they buckle a chain on.
+
+   ©ó¬O§Ú­Ì°µ¨ì¤F¡C§Ú­Ì³y¥X¤FGNU¨t²Î¡C§Y¨Ï¦³¤HºÙ¤§¬°Linux¡A·í¤H­Ì¨Ï¥Î¥¦
+   ®É¡AÁÙ¬O¯à±o¨ì¦Û¥Ñªº¯q³B¡C¦ý¬O¡A·í¤H­Ì¦b³o§@·~¨t²Î¤W°õ¦æ¨ã©Ò¦³Åvªºµ{¦¡
+   ®É¡A³o´N¹³¬O¤U­±³oºØª¬ªp¡A¤H­Ì¹³¬O¤w°kÂ÷¤F¤ä°tªÌ¡AµM«á¥L­Ì«ç»òµÛ? ¦³¤H
+   ¶]¨Ó»¡¡A"¼K! ¦pªG§AÄ@·N¦A¦©¤W³oÂêÁå¡A§Ú´Nµ¹§A¤@­Ó«Ü¤è«Kªº¦nªF¦è¡C" ©Ò¥H
+   ¥L­Ì´N¨Ä¨Ä¦a¦©¤W¤FÂêÁå¡C
+
+   These people don't care about freedom. It's not surprising they don't
+   care about freedom because nobody ever talked to them about freedom.
+   If you go around this conference, who's talking to you about freedom?
+   They think it's just a matter of convenience and advance technology in
+   getting jobs done and competitive edge, and they think that's what's
+   important. They don't think freedoms important in life.
+
+   ³o¨Ç¤H¤£¦b·N¦Û¥Ñ¡C¦Ó³o¨Ã¤£Åý¤HÅå³Y¡A¦]¬°±q¨Ó¨S¤H§i¶D¹L¥L­Ì¦Û¥Ñ³o¦^¨Æ¡C
+   ¦pªG§A³}³}³o·|³õ¡A¦³½Ö¦b½Í½×¦Û¥Ñ©O? ¥L­Ì»{¬°³o¥u¬OÃö©ó§¹¦¨¤u§@ªº¤è«K©Ê
+   »P¥ý¶i¬ì§Þ¡AÃö©ó«O«ù¦bÄvª§ªºÀu¶Õ¡A¥L­Ì»{¬°³o¨Ç¤~­«­n¡C¥L­Ì¤£»{¬°¦Û¥Ñ¬O
+   ¥Í©R¤¤¤@¥ó­«­nªº¨Æ¡C
+
+   [LSFT] Ok, you've hit upon an important issue, convenience. It is
+   convenient,for me to go down to the box every morning and put thirty
+   five cents in and get the Mercury News. I could just as easily get a
+   lot of the information that I buy the paper for, such as what time are
+   the movies playing, what's going on in the world for myself, but it's
+   more convenient to go....
+
+   [LSFT] ¦nªº¡A§A­è´£¨ì¤F¤@­Ó­«ÂI¡A¤è«K©Ê¡C¹ï§Ú¨Ó»¡¡A¨C¤Ñ¤U¼Ó¥h¤@­Ó³ø½c
+   §ë¶i¤­¤À¿úµM«á®³¥X¤@¥÷¤ô¬P¤é³ø¬O«Ü¤è«Kªº¡C§Ú¯à¬°¦Û¤v«Ü±q¶Rªº³ø¯È¤W±o¨ì
+   «Ü¦h¸ê°T¡A¹³¬O¹q¼v¤W¬M®É¶¡¡A¥@¬É¤W¥¿¦bµo¥Íªº¨Æ¡C¦ý§ó¤è«Kªº¬O...
+
+   [STALLMAN] I have nothing against that. We're talking at cross
+   purposes. I've been talking about do we have freedom or not. That is
+   not the same question as you pay money or not. These are not related
+   questions. You think they're the same question. That's the confusion.
+
+   [STALLMAN] §Ú§¹¥þ¤£¤Ï¹ï¨º¨Ç¡C§Ú­Ì¦b°Q½×¬Û¤Ïªº¨Æ¡C§Ú¤@ª½¦b»¡§Ú­Ì¬O§_¾Ö¦³¦Û
+   ¥Ñ¡A³o¸ò§A¥I¤£¥I¶O¬O¤£¤@¼Ëªº°ÝÃD¡C¥¦­Ì¬OµLÃöªº°ÝÃD¡A¦ý§A»{¬°¥¦­Ì¬O¤@¼Ëªº
+   °ÝÃD¡C¨º¬O¤@ºØ»~¸Ñ¡C
+
+   Most people think they're the same question, but they're not the same
+   question. We are selling copies of free software. People are paying us
+   money to get copies of free software. But our software's not
+   proprietary. Once you get a copy, you have the freedom that I say
+   everyone should have.
+
+   ¤j³¡¥÷¤H»{¬°³o¬O¦P¤@­Ó°ÝÃD¡A¦ý¥¦­Ì¤£¬O¡C§Ú­Ì¦Û¤w¤]¦b½æ¦Û¥Ñ³nÅé¡C¤H­Ì¥I¶O
+   µ¹§Ú­Ì¥H¨ú±o¤@¥÷¦Û¥Ñ³nÅé¡C¦ý§Ú­Ìªº³nÅé¤£¬O¨p¦³ªº¡C¤@¥¹§A®³¨ì¤@¥÷«þ¨©¡A§A
+   ´N¾Ö¦³§Ú©Ò»¡ªº¨ººØ¨C­Ó¤H³£¸Ó¾Ö¦³ªº¦Û¥Ñ¡C
+
+   So, there are these two independent questions. One is, does the
+   software allow you to have freedom or does it restrict you?
+
+   ©Ò¥H¡A³o¦³¨â­Ó¿W¥ßµLÃöªº°ÝÃD¡C¤@­Ó¬O¡A³o³nÅéÅý§A¾Ö¦³¦Û¥Ñ¡A©Î¬O­­¨îªº§Aªº
+   ¦Û¥Ñ?
+
+   The other question is did you pay to get it or not? All four
+   combinations are possible. There's gratis which means you don't have
+   to pay for it, and there's free meaning you have freedom in using it.
+   These are two independent questions.
+
+   ¥t¥~¤@­Ó°ÝÃD¬O¡A§A¬O§_¥I¶O¥h¨ú±o¥¦? ©Ò¦³¥|ºØ²Õ¦X³£¬O¥i¯àªº¡C§K¶O«üªº
+   ¬O¤£¥Î¥X¿ú´N¯à±o¨ì¥¦¡A¦Ó¦Û¥Ñªí¥Ü§A¾Ö¦³¨Ï¥Î¥¦ªº¦Û¥Ñ¡C³o¬O¨â­Ó¿W¥ßµLÃö
+   ªº°ÝÃD¡C
+
+   [LSFT] So what should happen?
+   [LSFT] ©Ò¥H?
+
+   [STALLMAN] The goal that I'm working for, and the reason why we
+   developed the GNU system, is so that people could have freedom when
+   they used computers. So people wouldn't be restricted and controlled
+   by owners of software, as to how they can cooperate with other users.
+   Whether people pay other people money is a separate question.
+
+   [STALLMAN] §Ú§V¤Oªº¥Ø¼Ð¡A¥H¤Î§Úµo®iGNU¨t²Îªº¥Øªº¡A´N¬OÅý¤H­Ì¦b¨Ï¥Î¹q¸£®É
+   ¯à¾Ö¦³¦Û¥Ñ¡C¦]¦¹¤H­Ì¤£¥²³Q³nÅé©Ò¦³¤H­­¨î»P±±¨î¡A¹³¬O¦p¦ó»P¨ä¥L¨Ï¥ÎªÌ¦X§@¡C
+   ³o»P¤H­Ì¬O§_¥I¿úµ¹¨ä¥L¤H¬O¤£¬Û¤zªº°ÝÃD¡C
+
+   In a free software world there's still business. For example, you can
+   sell copies of free software as we do, and as some companies do. You
+   can sell service and support, to people who value service and support.
+   For example, businesses that use software. They value service and
+   support. That means there's a business there in selling them service
+   and support.
+
+   ¦b¦Û¥Ñ³nÅéªº¥@¬É¸ÌÁÙ¬O¦³¥Í·N¥i§@¡CÁ|¨Ò¨Ó»¡¡A§A¥i¥H¹³¥H«e¤@¼Ë½æ¤@¥÷¥÷ªº
+   ³nÅé«þ¨©¡A´N¹³¦³¨Ç¤½¥q²{¦b§@ªº¤@¼Ë¡C§A¥i¥H½æªA°È»P¤ä´©µ¹¨º¨Ç»{¥iªA°È
+   »P¤ä´©»ù­Èªº¤H¡C¹³¬O¨º¨Ç¨Ï¥Î³nÅéªº¥ø·~¡C¥L­Ì»{¥iªA°È»P¤ä´©ªº»ù­È¡C¨º
+   ªí¥Ü¦³½æ¥L­ÌªA°È»P¤ä´©ªº¥Í·N¥i°µ¡C
+
+   [LSFT] Could you give me three specific things that you think should
+   happen to get to where you think this whole thing should be.
+
+   [LSFT] §A¯à¤£¯àÁ|¥X¤T¶µ§A»{¬°¸Óµo¥Íªº¯S§O¨Æ±¡¥H¹F¨ì§A©Ò»{¬°ªº¤è¦V?
+
+   [STALLMAN] The main thing is for more people to think about this
+   issue. To realize there's an issue of freedom here, not just an issue
+   of money or convenience or technology. That's the crucial thing,
+   because if enough people want their freedom, they'll take it. They'll
+   insist on keeping it.
+
+   [STALLMAN] ³Ì­«­nªº¬OÅý¤H­Ì«ä¦Ò³o¥ó¨Æ¡CÅý¥L­Ì¾å±o¦³­ÓÃö¥G¦Û¥Ñªº°ÝÃD¡A¦Ó
+   ¤£¬O­Ó¥uÃö©ó¿ú¡A¤è«K¡A©Î¬O¬ì§Þªº°ÝÃD¡C³o¬O­Ó«Ü­«­nªº¨Æ¡A¦]¬°­Y¦³¨¬°÷¦h
+   ªº¤H­n¨D¥L­Ìªº¦Û¥Ñ¡A¥L­Ì´N¥i¥H®³¨ì¥¦¡C¦Ó¥L­Ì±N·|°í«ù¦a¥h«O¦³¥¦¡C
+
+   The GNU system, whether you call it GNU or whether you think it's
+   Linux, right now offers you an alternative with freedom. That may not
+   continue to be true if people do not care enough about their freedom
+   to preserve their freedom. And I'm sure, having been in the Army,
+   you've heard the idea, that if people aren't willing to fight for
+   their freedom, they may not have it any more.
+
+   GNU¨t²Î¡A¤£ºÞ§AºÙ¥¦GNUÁÙ¬OLinux¡A²{¦b´£¨Ñ¤H­Ì¥t¥~¤@­Ó¦Û¥Ñªº¿ï¾Ü¡C¦pªG¤H
+   ­Ì¤£°÷¦b·N¥L­Ìªº¦Û¥Ñ¥H«O¦³¤§¡A³o¥i¯àµLªk«ùÄò¦¨¯u¡C§Ú¤£¤Ó½T©w¡A¦ý­Y§A«Ý¹L
+   ®ü­x¡A§A´N·|Å¥¹L³o»¡ªk¡A¦pªG¤H­Ì¤£ªÖ¬°¥L­Ìªº¦Û¥Ñ¾Ä°«¡A¥L­Ì¥i¯à¦A¤]µLªk
+   ¾Ö¦³¦Û¥Ñ¡C
+
+   We aren't fighting with guns. Nobody's killing anybody over free
+   software or proprietary software. It's not like that. But there is
+   a battle to be fought, although it's not a battle with violence...
+
+   §Ú­Ì¤£¬O¥Îºj¥´¥M¡C¨S¦³¤H·|¬°¦Û¥Ñ³nÅé©Î¬O©Ò¦³Åv³nÅé±þ¤H¡C¨Æ±¡¤£¬O¨º¼Ë¡C¦ý
+   §Ú­Ì¦³¤@³õ­n¥´ªº¥M¡A§Y¨Ï¤£¬O¤@³õ¼É¤O¦å¸{ªº¥M¡C
+
+   [LSFT] An intellectual battle.
+
+   [LSFT] ³o¬O¤@³õ´¼ÃÑªº¥M¡C
+
+   [STALLMAN] Right! And if people don't value their freedom enough to
+   work hard to keep it, and sometimes make sacrifices to keep it,
+   somebody will tempt us into giving it up.
+
+   [STALLMAN] ¨S¿ù! ¦pªG¤H­Ì¤£°÷¬Ãµø¥L­Ìªº¦Û¥Ñ¥H§V¤Oªº«O¦³¦Û¥Ñ¡A¦³®É¬Æ¦Ü°µ¨Ç
+   Äë¬¹¡A¦³¤H´N·|»¤´b§Ú­Ì¥h©ñ±ó¥¦¡C
+
+   Like Oracle.
+   ´N¹³¥Ò°©¤å¥q¤½¥q¡C
+
+   Oracle has managed to worm it's way into the center of a conference,
+   about a free operating system, so that they can offer their non-free
+   software and tell you you're better off if you add their non-free
+   software to your free system.
+
+   ¥Ò¥j¤å¥Î¨ÏºÉ¦UºØ¤èªk­n¦¨¬°¤@­Ó·|Ä³ªºµJÂI¡A¦Ó³o·|Ä³¬OÃö©ó¤@­Ó¦Û¥Ñªº§@·~
+   ¨t²Î¡A¦nÅý¥L­Ì¯à´£¨Ñ¥L­Ìªº«D¦Û¥Ñ³nÅé¡A¨Ã¥B§i¶D§A¡A§A·|ÅÜ±o§ó¦n--¦pªG§A
+   ±N¥L­Ìªº«D¦Û¥Ñ³nÅé¥[¤J§Aªº¦Û¥Ñ§@·~¨t²Î¡C
+
+   It's like going to somebody who has just run away from slavery and
+   said, "Hey how bout if you sell yourself into slavery again, we'll
+   sell you this cute little decoder ring."
+
+   ³o´N¹³¬O¶]¥h¸ò¬Y­Ó­è±q¥£ÁõÀç°k¥X¨Óªº¤H»¡¡A"¼K! ¦pªG§A§â¦Û¤v¦A½æ¶i¥£ÁõÀç¡A
+   §Ú­Ì´N½æ§A³o­Ó¥i·Rªº¤p¸Ñ½XÀô¡A§AÄ±±o³o¥D·N¦p¦ó?"
+
+   [LSFT] But Oracle can't make me buy their product.
+
+   [LSFT] ¦ý¥Ò¥j¤åµLªk¨Ï§Ú¶R¥L­Ìªº²£«~¡C
+
+   [STALLMAN] That's right, but they can tempt you into doing it. As long
+   as your're using their product, their chains are on you.
+
+   [STALLMAN] ¹ïªº¡A¦ý¬O¥L­Ì¥i¥H»¤´b§A¥h¶R¡C¥u­n§AÁÙ¥Î¥L­Ìªº²£«~¡A¥L­ÌªºÂêÁå
+   ´N®M¦b§A¨­¤W¡C
+
+   [LSFT] I could get tempted into drinking too much beer, but I don't do
+   that.
+
+   [LSFT] §Ú¥i¯à·|³Q»¤´b¥h¦h³Ü¤Ó¦h°à°s¡A¦ý§Ú¤£·|¨º¼Ë°µ¡C
+
+   [STALLMAN] That's right. And there are some people who don't do that.
+   That realize that drinking too much is bad for you. If people realize
+   that giving up your freedom in exchange for convenience, in exchange
+   for a competitive edge is foolish in the long term. Then, a lot of
+   people wont do it.
+
+   [STALLMAN] ¨S¿ù¡C´N¬O¦³¤H¤£·|¨º¼Ë°µ¡C¥L­Ìª¾¹D³Ü¤Ó¦h°s¬O¤£¦nªº¡C¦pªG¤H
+   ­Ìª¾¹D©ñ±ó¦Û¥Ñ¥H´«¨ú¤è«K¡A´«¨ú¤@­ÓÄvª§ªºÀu¶Õ¡Aªø»·¨Ó¬Ý¬O¤@¥ó·MÄøªº¨Æ¡C
+   ¨º»ò¤j¦h¼Æ¤H³£¤£·|Ä@·N¥h°µ¡C
+
+   So that's the point. That's why the most important thing is to educate
+   people, to make them aware that their freedom is at stake.
+
+   ©Ò¥H³o´N¬O­«ÂI¡C³o´N¬O¬°¤°»ò±Ð¨|¥@¤H¬O¤@¥ó³Ì­«­nªº¨Æ¡A­nÅý¥L­Ìª¾¹D¥L­Ì
+   ªº¦Û¥Ñ¤w¬O§Ä§Ä¥i¦M¡C
+
+   People should take a look at www.gnu.org. and they'll find out the
+   reasons why the so called Linux operating system exists. It's not just
+   a matter of engineers having fun doing engineering, it's a political
+   force that actually has an idealistic cause, that has actually had
+   practical results.
+
+   ¤H­Ì¸Ó¬Ý¤@¬Ýwww.gnu.org¡AµM«á¥L­Ì·|µo²{³o­Ó©Ò¿×Linux§@·~¨t²Îªº¦s¦b²z¥Ñ¡C
+   ³o¤£¬O¥uÃö©ó³nÅé¤uµ{®v³ßÅw¼gµ{¦¡¡A¥¦¬O¤@­Ó¦³²z·Q®Ú¾Ú¡A½T¹ê¦a¦³¹ê»Úµ²ªGªº
+   ¬Fªv¤O¡C
+
+   Contact Us | About | Home
+   (c) Linuxsoft 1999, All rights reserved.
+   Linux (R) is a registered trademark of Linus Torvalds.
+
+--
+      Y o u   w i l l   w h e n   y o u   b e l i e v e . . .
+
+           T h e   S O U R C E   i s   w i t h   u s . . .
+--
+[m¡° Origin: »O¤j¹q¾÷ Maxwell ¯¸ ¡» From: pc5336.ee.ntu.edu.tw
+¡° X-Info: meowmeow -> changcs@santos.ee.ntu.edu.tw
+¡° X-Sign: 0TB8I7LCvoUMOKLsfx9M (01/03/18 13:34:45 )

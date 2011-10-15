@@ -1,0 +1,249 @@
+   
+                     FREE SOFTWARE LEADERS STAND TOGETHER
+                          自由軟體眾領導者聯合聲明
+
+   The Craig Mundie speech is old news by now, so hopefully this is the
+   last word. A number of the free software evangelists, in informal
+   discussion, felt that the proper response to Microsoft would be to
+   stand together. Mundie's speech shows that Microsoft's strategy is to
+   keep us divided and attack us one at a time, until all are gone. Thus,
+   their emphasis on the GPL this time. While we didn't try to represent
+   every group and project, many major voices of Open Source and Free
+   Software have signed this message. We took a while, because we're not
+   used to this, but we'll be better next time. So, please note the
+   signatures at the bottom of this message - we will stand together, and
+   defend each other.
+
+   Craig Mundie 的演說現在已經是舊聞了﹐所以也許這是最後的回應。在非正式 
+   的討論之後﹐一群自由軟體狂熱者覺得該是大家一起發表正式聲明的時候了    
+   。Mundie 的演說已經顯示出微軟的策略就是要分化我們並且各個擊破﹐這就是
+   為什麼現在他們的目標集中在 GPL 上。我們並不想要代表每個計劃與團體﹐不
+   過幾位開放原碼與自由軟體的代言者已經簽署了這一份聲明。我們以前是不太這
+   麼做的﹐也因此多花了一些時間﹐不過下次我們會作得更好。請注意本聲明下方
+   的簽名 - 我們將會站在同一個戰線﹐並且互相支援。
+
+     Bruce Perens
+
+   We note a new triumph for Open Source and Free Software: we have
+   become so serious a competitor to Microsoft that their executives
+   publicly announce their fear. However, the only threat that we present
+   to Microsoft is the end of monopoly practices. Microsoft is welcome to
+   participate as an equal partner, a role held today by entities ranging
+   from individuals to transnational corporations like IBM and HP.
+   Equality, however, isn't what Microsoft is looking for. Thus, they
+   have announced Shared Source, a system that could be summarized as
+   Look but don't touch - and we control everything.
+
+   我們注意到開放原碼與自由軟體的一項勝利: 我們已經變成了一個微軟不可忽略
+   的對手﹐他們的高層已經公開地表示出他們的恐懼。儘管如此﹐我們唯一展現在
+   微軟面前的威脅﹐就是壟斷經營這件事已經到了盡頭。歡迎微軟成為與我們對等
+   的伙伴﹐一個從個人到如 IBM 與 HP 等跨國企業已經投身的角色﹐然而微軟要
+   求的顯然不是對等這件事。因此他們提出了所謂的 Shared Source﹐一個可以這
+   樣描述的系統 : 可遠觀而不可褻玩 - 而且 *我們* 掌控著所有的東西。
+
+   Microsoft deceptively compares Open Source to failed dot-com business
+   models. Perhaps they misunderstand the term Free Software. Remember
+   that Free refers to liberty, not price. The dot-coms gave away goods
+   and services as loss-leaders, in unsuccessful efforts to build their
+   market share. In contrast, the business model of Open Source is to
+   reduce the cost of software development and maintenance by
+   distributing it among many collaborators.
+
+   微軟將開放原碼與失敗的 dot-com 事業作誤導性的比較﹐也許他們誤解了 Free
+   Software 的意義。請記得 Free 代表的是自由﹐而不是免費。dot-com 公司以
+   敗家子的方式散出產品與服務﹐徒勞無功地建立起他們的市場佔有率。相反的﹐
+   開放原碼的商業模式﹐卻是以將軟體散布在各個合作人員之間的方式﹐來降低軟
+   體開發與維護的費用。
+
+   The success of the Open Source model arises from copyright holders
+   relaxing their control in exchange for more and better collaboration.
+   Developers allow their software to be freely redistributed and
+   modified, asking only for the same privileges in return.
+
+   開放原始碼模式的成功之處﹐在於版權持有人釋放了他們所擁有的控制權﹐並且
+   藉以換得更多更好的團隊合作發展。發展人員允許他們的軟體能夠自由地重新散
+   布與修改﹐僅僅要求相同對等的回饋。
+
+   There is much software that is essential to a business, but which does
+   not differentiate that business from its competitors. Even companies
+   that have not fully embraced the Open Source model can justify
+   collaboration on Free Software projects for this non-differentiating
+   software, because of the money they will save. And such collaborations
+   are often overwhelmingly successful: for example, the project that
+   produces the market-leading Apache web server was started by a group
+   of users who agreed to share the work of maintaining a piece of
+   software that each of their businesses depended on.
+
+   對於商業公司來說﹐有許多軟體是非常必要的﹐但是並不是這些軟體有權利可以
+   讓其競爭對手無法擁有商機。就算是那些不完全擁抱開放原始碼模式的公司﹐也
+   可以藉由那些不造成壟斷商機的軟體而擁有了團隊合作發展的機會。因為他們已
+   經能夠將花費給節省下來。像這樣的合作經常獲得全面性的成功: 舉例來說﹐像
+   是市場領導品牌的 Apache 伺服器計劃﹐就是因為一群使用者要共同維護一個他
+   們的公司都需要的軟體﹐並互相分享彼此的成果而開始的。
+
+   The efficiency of this cooperation is in the best interests of the
+   user. But Free Software is also directly in the user's interest,
+   because it means that the users control the software they use. When
+   they do business with Open Source vendors, the vendors do not dominate
+   them.
+
+   這樣的合作而產生的效率﹐對使用者是最有利的﹐但是自由軟體也能夠直接照顧
+   到使用者的利益﹐因為使用者現在可以控制他們使用的軟體的品質了。當他們與
+   開放原始碼廠商作生意時﹐這些廠商並不會全然控制他們。
+
+   With very little funding, the GNU/Linux system has become a
+   significant player in many major markets, from Internet servers to
+   embedded devices. Our GUI desktop projects have astounded the software
+   industry by going from zero to being comparable with or superior to
+   others in only 4 years. Workstation manufacturers like Sun and HP have
+   selected our desktops to replace their own consortium projects,
+   because our work was better. An entire industry has been built around
+   Free Software, and is growing rapidly despite an unfavorable market.
+   The success of software companies like Red Hat, and the benefits to
+   vendors such as Dell and IBM, demonstrate that Free Software is not at
+   all incompatible with business.
+
+   藉由極為少量的基金﹐GNU/Linux 系統在許多的市場中已經成為一個令人注目的
+   角色﹐從網際網路伺服器到嵌入式系統皆然。我們的 GUI 桌面環境計畫﹐ 從完
+   全沒有﹐到現在可以與其它產品相比﹐甚至還要更好﹐只花了短短的 4 年﹐這 
+   已經震驚了軟體工業。像 Sun 與 HP 等工作站廠商﹐選擇我們的桌面環境﹐來 
+   取代他們自己合作方案﹐只因為我們的東西更好。儘管市場的表現對自由軟體來
+   說並不盡如人意﹐然而藉由自由軟體的充斥﹐整體的產業環境儼然成形﹐並正迅
+   速地成長中。 如 Red Hat 軟體公司的成功﹐以及像 Dell 與 IBM 等從中獲得
+   的助益﹐在在都顯示了自由軟體並不是完全不相容於商業活動的。
+
+   The Free Software license singled out for abuse by Microsoft is the
+   GNU General Public License, or GNU GPL. This license is the computer
+   equivalent of share and share alike. But this does not mean, as
+   Microsoft claims, that a company using these programs is legally
+   obliged to make all its software and data free. We make all GPL
+   software available in source form for incorporation as a building
+   block in new programs. This is the secret of how we have been able to
+   create so much good software, so quickly.
+
+   微軟所單挑並詆毀的自由軟體授權﹐就是 GNU 通用公共授權 (GNU General
+   Public License)﹐或稱 GNU GPL。這份版權聲明正好符合電腦的發展原則﹐是
+   經由一次又一次﹐彼此相互不斷地共享而來的。但是它並不像微軟所宣稱的﹐只
+   要一間公司使用這些程式﹐就必須依法公開它所有的軟體與資料。我們讓所有的
+   GPL 軟體以原始碼的形式讓大家可以取得並使用﹐它就像是基礎材料一樣地可以
+   在新程式內被使用。這就是我們怎麼能夠作出這麼多好軟體﹐不只多﹐而且快的
+   祕密。
+
+   If you do choose to incorporate GPL code into a program, you will be
+   required to make the entire program Free Software. This is a fair
+   exchange of our code for yours, and one that will continue as you reap
+   the benefit of improvements contributed by the community. However, the
+   legal requirements of the GPL apply only to programs which incorporate
+   some of the GPL-covered code - not to other programs on the same
+   system, and not to the data files that the programs operate upon.
+
+   如果你真的選擇了在一個程式中使用了 GPL 的程式碼﹐整個程式都會被要求成 
+   為自由軟體。對我們的程式碼而言﹐這樣要求你的程式碼是很公平的回饋﹐而且
+   在你獲得社群的貢獻回饋的同時﹐這樣的機制還會繼續下去。然而﹐GPL 的要求
+   僅僅限於那些被併入具 GPL 授權的程式碼的程式 - 這並不包括同樣系統上的其
+   它程式﹐還有這些程式所使用的資料也不算在內。
+
+   Although Microsoft raises the issue of GPL violations, that is a
+   classic red herring. Many more people find themselves in violation of
+   Microsoft licenses, because Microsoft doesn't allow copying,
+   modification, and redistribution as the GPL does. Microsoft license
+   violations have resulted in civil suits and imprisonment. Accidental
+   GPL violations are easily remedied, and rarely get to court.
+
+   儘管微軟提出了違反 GPL 的爭議﹐但是那卻是很無關緊要的事。更多的人會發 
+   現他們違反了微軟的授權﹐因為微軟不准 GPL 所允許的複製﹐修改﹐以及再散
+   佈的行為。違反了微軟的授權就會吃上官司﹐甚至遭判刑﹐但無意間的違反 GPL
+   授權卻很容易做出修正或是補救措施﹐很少有鬧上法庭的事情。
+
+   It's the share and share alike feature of the GPL that intimidates
+   Microsoft, because it defeats their Embrace and Extend strategy.
+   Microsoft tries to retain control of the market by taking the result
+   of open projects and standards, and adding incompatible Microsoft-only
+   features in closed-source. Adding an incompatible feature to a server,
+   for example, then requires a similarly-incompatible client, which
+   forces users to "upgrade". Microsoft uses this
+   deliberate-incompatibility strategy to force its way through the
+   marketplace. But if Microsoft were to attempt to "embrace and extend"
+   GPL software, they would be required to make each incompatible
+   "enhancement" public and available to its competitors. Thus, the GPL
+   threatens the strategy that Microsoft uses to maintain its monopoly.
+
+   就是 GPL 的 share and share alike 的特性﹐讓微軟感到害怕﹐因為它擊敗了
+   他們的 Embrace and Extend (擁抱並擴充) 的策略。微軟以取得開放計劃與標
+   準的成果﹐然後以封閉程式碼的形式加上不相容的微軟獨家功能﹐來嚐試著取得
+   市場的控制權。舉例來說﹐伺服器加上了不相容的功能﹐就需要功能相似但不相
+   容 的用戶端程式﹐如此就可以強迫用戶進行 "昇級"。微軟利用這種故意加上不
+   相容性的策略﹐來在市場上取得一席之地。但是如果微軟想要 "擁抱並擴充"   
+   GPL 軟體的話﹐他們就必需要公開每個不相容的 "功能加強" 程式碼給其競爭者
+   。如此一來﹐GPL 就威脅到微軟用以維持其獨大的一貫策略了。
+
+   Microsoft claims that Free Software fosters incompatible "code
+   forking", but Microsoft is the real motor of incompatibility: they
+   deliberately make new versions incompatible with old ones, to force
+   users to purchase each upgrade. How many times have users had to
+   upgrade Office because the Word file format changed? Microsoft claims
+   that our software is insecure, but security experts say you shouldn't
+   trust anything but Free Software for critical security functions. It
+   is Microsoft's programs that are known for snooping on users,
+   vulnerability to viruses, and the possibility of hidden "back doors".
+
+   微軟宣稱自由軟體會衍生不相容程式碼﹐但是微軟才是不相容的真正始作俑者。
+   他們刻意讓新版無法相容於舊版﹐迫使消費者不得不做升級。有多少次使用者必
+   須昇級 Office﹐只因為 Word 檔案格式的改變 ? 微軟宣稱我們的程式不安全﹐
+   但是安全專家說﹐在極度重要的安全功能上﹐除了自由軟體外﹐你不應該信任其
+   它的軟體。微軟的程式可一直是以能夠窺視使用者資料﹐易於感染病毒﹐和可能
+   藏有 "後門" 聞名的。
+
+   Microsoft's Shared Source program recognizes that there are many
+   benefits to the openness, community involvement, and innovation of the
+   Open Source model. But the most important component of that model, the
+   one that makes all of the others work, is freedom. By attacking the
+   one license that is specifically designed to fend off their customer
+   and developer lock-in strategy, they hope to get the benefits of Free
+   Software without sharing those benefits with those who participate in
+   creating them.
+
+   微軟的 Shared Source 計劃已經體認到一個開放的社群參與﹐以及開放原始碼
+   模式的創新可以帶來許多好處。但是該模式中最重要的一個項目﹐也是讓所有其
+   它項目能夠運作的﹐就是自由。藉由攻擊一個能夠抵擋他們綁住用戶與開發人員
+   的策略的授權﹐他們希望能夠得到自由軟體的好處﹐而不必與參與創造它們的人
+   一同分享成果。
+
+   We urge Microsoft to go the rest of the way in embracing the Open
+   Source software development paradigm. Stop asking for one-way sharing,
+   and accept the responsibility to share and share alike that comes with
+   the benefits of Open Source. Acknowledge that it is compatible with
+   business.
+
+   我們督促微軟能夠在未來擁抱開放原碼的軟體發展典範。不要再要求單向的分享
+   ﹐在得到開放原碼的助益的同時﹐負起 share and share alike 的責任。承認
+   它是可與商業並存的。
+
+   Free Software is a great way to build a common foundation of software
+   that encourages innovation and fair competition. Microsoft, it's time
+   for you to join us.
+
+   自由軟體是建構軟體的共同基礎的好方法﹐這些基礎可鼓勵創新與公平競爭。微
+   軟﹐該是你加入我們的時候了。
+
+     Bruce Perens, Primary Author: The Open Source Definition
+
+     co-signers:
+
+     Richard Stallman, Free Software Foundation.
+     Eric Raymond, Open Source Initiative.
+     Linus Torvalds, Creator of the Linux Kernel.
+     Miguel de Icaza, GNOME GUI Desktop Project.
+     Larry Wall, Creator of the Perl Language.
+     Guido van Rossum, Creator of the Python Language.
+     Tim O'Reilly, Publisher.
+     Bob Young, Co-Founder, Red Hat
+     Larry Augustin, CEO, VA Linux Systems
+     _________________________________________________________________
+
+   A master copy of this document can be found at
+   http://perens.com/Articles/StandTogether.html You may copy and
+   reproduce this document with the formatting changes and translation
+   necessary for your publication, but please don't change what we say.
+   See perens.com for press contact information. Thanks to Dave Edwards
+   for his work on putting this document together.

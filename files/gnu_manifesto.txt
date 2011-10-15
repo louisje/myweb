@@ -1,0 +1,804 @@
+
+
+The GNU Manifesto [GNU 計畫立場聲明]
+
+CLDP聲明
+
+本文是GNU計畫的文件中譯, 不屬於CLDP的一部份, 也不是在CLDP 計畫下完成的. CLDP
+基於Linux 與GNU計畫的深厚淵源,引用此文章, 希望讓Linux的使用者對GNU有更進一步的
+了解.
+
+
+小啟
+本文英文原文可於<http://www.gnu.org/gnu/manifesto.html> 或者任何的emacs 附的文
+件中找到。
+
+本文原文由Richard Stallman在GNU計劃開始之初完成。 用以 尋求眾人的參與及支持。
+剛開始幾年有稍微的修正，以反應計 劃的發展。因為很多人都看過本文，所以本文將會保
+持原狀， 不再修改。
+
+欲對GNU 計劃有更詳細的了解，請看<http://www.gnu.org/>
+
+本文中譯由蕭永慶獨立完成。本中譯文謹代表譯者對原文的 了解，僅供參考之用，不能
+代表原作者本意, 原作者亦沒有 正式認證本文等價於其本意。本文的責任歸屬於譯者，
+與原 作者無關，如與原文有所出入應以原文為準。
+
+如果您對譯文有任何意見與指教，歡迎寄至 yhsiao@cae.wisc.edu， 以為下次更新參考
+。本中譯文最後一次更新為1997年11月。
+
+本文為初稿, 歡迎來信指正.
+
+
+
+------------------------------------------------------------------------------
+--
+Copyright (C) 1985 Richard M. Stallman (Copying permission notice at the end.)
+本文版權由Richard M. Stallman 所有 這是1985年的文章 （版權聲明在文末）
+Copyright(C), 1995, 1997
+
+
+What's GNU? Gnu's Not Unix!
+什麼是GNU ? Gnu 是 [Gnu's Not Unix] 的縮寫.
+
+
+GNU, which stands for Gnu's Not Unix, is the name for the complete
+Unix-compatible software system which I am writing so that I can give it away
+free to everyone who can use it. Several other volunteers are helping me.
+Contributions of time, money, programs and equipment are greatly needed.
+
+GNU, Gnu's Not Unix的縮寫，是我正在寫的一個與UNIX相容的軟體系統， 目的在於我能
+夠自由的把此系統給想要用它的人。有好幾個自願者在幫 我的忙。我們非常的需要（希望
+）您能夠貢獻時間、金錢、程式或者是 機器。
+
+So far we have an Emacs text editor with Lisp for writing editor commands, a
+source level debugger, a yacc-compatible parser generator, a linker, and
+around 35 utilities. A shell (command interpreter) is nearly completed. A new
+portable optimizing C compiler has compiled itself and may be released this
+year. An initial kernel exists but many more features are needed to emulate
+Unix. When the kernel and compiler are finished, it will be possible to
+distribute a GNU system suitable for program development. We will use @TeX{}
+as our text formatter, but an nroff is being worked on. We will use the free,
+portable X window system as well. After this we will add a portable Common
+Lisp, an Empire game, a spreadsheet, and hundreds of other things, plus
+on-line documentation. We hope to supply, eventually, everything useful that
+normally comes with a Unix system, and more.
+
+到目前為止我們已經有了一個Emacs編輯器，可用Lisp寫巨集命令，一個原始 碼層次的除
+錯器，一個與yacc相容的語法分析程式產生器，一個聯結器， 和大概35個公用程式。有
+一個Shell （命令解譯器）已經幾乎完成了。 一個新的、易於移植的(portable)、有最佳
+化功能的Ｃ編譯器已經可以自我編譯， 可以在今年發表了。有一個初期的核心但是需要更
+多的特性以模擬UNIX 。當核心和編譯器都結束後，我們就能夠傳播一個穩定的，適合發
+展程式 的GNU 系統。我們會使用@TeX{}當我們的文字排版器，但是也正在撰寫一個nroff
+。我們也會用免費的、portable的Ｘ視窗系統。之後我們 會加一個portable的
+Common Lisp 、一個Empire遊戲、一個試算表、和 其他各式各樣的東西，以及線上的文件
+。我們希望最後能提供一般UNIX 系統所能提供的每一件有用的東西，甚至要更多。
+
+GNU will be able to run Unix programs, but will not be identical to Unix. We
+will make all improvements that are convenient, based on our experience with
+other operating systems. In particular, we plan to have longer filenames, file
+version numbers, a crashproof file system, filename completion perhaps,
+terminal-independent display support, and perhaps eventually a Lisp-based
+window system through which several Lisp programs and ordinary Unix programs
+can share a screen. Both C and Lisp will be available as system programming
+languages. We will try to support UUCP, MIT Chaosnet, and Internet protocols
+for communication.
+
+GNU 一定能夠執行Unix的程式，但是不會和Unix完全一樣。我們會根據 我們在其它作業
+系統上的經驗來改進所有可以增加便利性的地方。特別是 我們計劃擁有較長的檔名、
+檔案版本號碼、一個不怕當機的檔案系統， 或許還要有自動檔名補全、與終端機無關的
+顯示支援、可能最後還要有 一個以Lisp為基礎的視窗系統，可以使的好幾個Lisp程式和普
+通的Unix 程式共同分想一個螢幕。Ｃ和Lisp都將會成為系統的程式語言。我們會 設法支
+援UUCP，MIT Chaosnet，及Internet的通訊協定。
+
+GNU is aimed initially at machines in the 68000/16000 class with virtual
+memory, because they are the easiest machines to make it run on. The extra
+effort to make it run on smaller machines will be left to someone who wants to
+use it on them.
+
+GNU 最初的目標是有虛擬計憶體，68000/16000 系列的機器，因為這 是最容易發展程式
+來實現GNU 的機器。剩下來，讓GNU 能在其它較小的機 器執行的工作，將會留給那些希望
+能在這些機器上使用GNU 的人。
+
+To avoid horrible confusion, please pronounce the `G' in the word `GNU' when
+it is the name of this project.
+
+為了避免可怕的混淆，請各位提到此計劃的名字gnu 時務必要把Ｇ 的音發出來。譯註:
+gnu 音譯 葛怒，非洲的大羚羊。
+
+
+Who Am I?
+我是誰？
+I am Richard Stallman, inventor of the original much-imitated EMACS editor,
+formerly at the Artificial Intelligence Lab at MIT. I have worked extensively
+on compilers, editors, debuggers, command interpreters, the Incompatible
+Timesharing System and the Lisp Machine operating system. I pioneered
+terminal-independent display support in ITS. Since then I have implemented one
+crashproof file system and two window systems for Lisp machines, and designed
+a third window system now being implemented; this one will be ported to many
+systems including use in GNU. [Historical note: The window system project was
+not completed; GNU now plans to use the X window system.]
+
+我是Richard Stallman，是被很多編輯器模仿的Emacs 編輯器的原創者， 先前在麻省理
+工學院人工智慧實驗室任教。我當時在編譯器、編輯器、 除錯器、命令解譯器、
+Incompatible Timesharing System 以及Lisp機 器皆有廣泛的研究。從那時起我就發展
+了一個不怕當機的檔案系統及兩 個Lisp機器的視窗系統而且設計了第三個現在正在發展
+中的視窗系統； 這一個將會移植到包括GNU 在內的很多系統上。〔按：這個視窗系統的
+計畫並沒有完成；GNU 現在計畫使用Ｘ視窗系統當作它的使用者介面〕
+
+
+Why I Must Write GNU
+我為什麼一定要寫GNU
+I consider that the golden rule requires that if I like a program I must share
+it with other people who like it. Software sellers want to divide the users
+and conquer them, making each user agree not to share with others. I refuse to
+break solidarity with other users in this way. I cannot in good conscience
+sign a nondisclosure agreement or a software license agreement. For years I
+worked within the Artificial Intelligence Lab to resist such tendencies and
+other inhospitalities, but eventually they had gone too far: I could not
+remain in an institution where such things are done for me against my will.
+
+我把『如果我喜歡一個程式的話，那我就應該分享給其他喜歡這個程 式的人』這句話當
+成我的座右銘。軟體商欲個別擊破使用者，使他們同 意不把軟體和他人分享。我拒絕以這
+種方式破壞使用者的團結。我的良 心使我不會簽下一個保密合約或是軟體授權合約。我在
+MIT AI實驗 室對抗這種趨勢和其他的不友善好幾年，但是最後事情糟糕到：我沒辦法待
+在一個處理事情的方法與我的意願相違的機構。
+
+So that I can continue to use computers without dishonor, I have decided to
+put together a sufficient body of free software so that I will be able to get
+along without any software that is not free. I have resigned from the AI lab
+to deny MIT any legal excuse to prevent me from giving GNU away.
+
+為了我能不對不起良心[dishonor]下，繼續使用電腦，我決定要集合一足 夠量的自由軟體
+以使我能夠不使用那些不自由的軟體。我離開AI實驗室 為的就是不給MIT 有任何法律上
+的藉口來阻止我把GNU 送給其他人。
+
+
+Why GNU Will Be Compatible with Unix
+為什麼 GNU 將會和 UNIX 相容
+Unix is not my ideal system, but it is not too bad. The essential features of
+Unix seem to be good ones, and I think I can fill in what Unix lacks without
+spoiling them. And a system compatible with Unix would be convenient for many
+other people to adopt.
+
+UNIX並不是我理想的系統，但是它也不是太差。UNIX基本的特性似乎是 蠻優良的，而
+且我想我能夠在不犧牲原有特性之下加進Unix缺少的東西 。況且一個和UNIX相容的系統
+可以讓較多的人容易接受。
+
+
+How GNU Will Be Available
+GNU 將要如何讓他人取得
+GNU is not in the public domain. Everyone will be permitted to modify and
+redistribute GNU, but no distributor will be allowed to restrict its further
+redistribution. That is to say, proprietary modifications will not be allowed.
+I want to make sure that all versions of GNU remain free.
+
+GNU 不是公開的，沒有約束的軟體[public domain]。我們將會允許每 一個人修改及傳播
+GNU 但是絕不允許傳播者對他傳播的程式再加進其 他的限制。就是說， 不允許將修改後
+的程式佔為己有。我要確定 GNU 所有的版本皆能保持自由。
+
+
+Why Many Other Programmers Want to Help
+為什麼有很多程式設計者願意幫忙
+I have found many other programmers who are excited about GNU and want to
+help.
+
+我發現有很多程式設計者對GNU 感興趣而且願意幫忙 。
+
+Many programmers are unhappy about the commercialization of system software.
+It may enable them to make more money, but it requires them to feel in
+conflict with other programmers in general rather than feel as comrades. The
+fundamental act of friendship among programmers is the sharing of programs;
+marketing arrangements now typically used essentially forbid programmers to
+treat others as friends. The purchaser of software must choose between
+friendship and obeying the law. Naturally, many decide that friendship is more
+important. But those who believe in law often do not feel at ease with either
+choice. They become cynical and think that programming is just a way of making
+money.
+
+很多程式設計者對系統軟體商業化感到不悅。這可能使他們賺更多的錢 ，但是大致上這使
+得他們有，與其他的程式設計者衝突，而非大家 都是同志的感覺。程式設計者對友誼的
+最基本表現就是把程式分享出來 ；而當前的市場競爭架構基本上禁止程式設計者彼此之間
+視為朋友。軟體 購買者必須在友誼和守法之間做一選擇。自然地，有很多選擇了友誼比
+較重要。但是那些相信法律的人常常沒辦法安心的做下任一選擇。他們 變得憤世忌俗且認
+為寫程式只不過是賺錢的一種方法而已。
+
+By working on and using GNU rather than proprietary programs, we can be
+hospitable to everyone and obey the law. In addition, GNU serves as an example
+to inspire and a banner to rally others to join us in sharing. This can give
+us a feeling of harmony which is impossible if we use software that is not
+free. For about half the programmers I talk to, this is an important happiness
+that money cannot replace.
+
+透過撰寫及使用GNU 而非私有的程式，我們可以熱情的對待每一個人並 且遵守法律。此
+外，GNU 更是一個激發與集結大家和我們一起分享的典 範及號誌。這樣子能夠給我們一種
+和諧的感覺，這感覺是我們為那些不 自由的軟體工作所不能得到的。大概有一半和我談
+過的程式設計師認為 這是一個金錢所不能替換的、很重要的享受。
+
+
+How You Can Contribute
+你可以怎樣貢獻
+I am asking computer manufacturers for donations of machines and money. I'm
+asking individuals for donations of programs and work.
+
+我請電腦製造商捐獻機器及金錢。我呼籲個人貢獻程式與精力。
+
+One consequence you can expect if you donate machines is that GNU will run on
+them at an early date. The machines should be complete, ready to use systems,
+approved for use in a residential area, and not in need of sophisticated
+cooling or power.
+
+如果你貢獻機器的話，你可以期待的一個結果就是GNU 可以早點在你提 供的機器上面執行
+。機器必須是完整的、馬上可用的系統，可以在住宅 區內使用，而且不須要複雜的冷卻
+及電力系統。
+
+I have found very many programmers eager to contribute part-time work for GNU.
+For most projects, such part-time distributed work would be very hard to
+coordinate; the independently-written parts would not work together. But for
+the particular task of replacing Unix, this problem is absent. A complete Unix
+system contains hundreds of utility programs, each of which is documented
+separately. Most interface specifications are fixed by Unix compatibility. If
+each contributor can write a compatible replacement for a single Unix utility,
+and make it work properly in place of the original on a Unix system, then
+these utilities will work right when put together. Even allowing for Murphy to
+create a few unexpected problems, assembling these components will be a
+feasible task. (The kernel will require closer communication and will be
+worked on by a small, tight group.)
+
+我發現有很多的程式師渴望為GNU 貢獻部份閒暇的精力。對大部分的計 畫而言，如此部份
+的、分散的工作非常難以協調；大家獨立寫的各部份 可能沒辦法合在一起工作。但是
+就取代Unix的特定任務來說就沒有這個 問題。一個完整的Unix系統包括了上百個工具程
+式，每一個程式都分別 有所描述。大部分的界面規格都因Unix相容性的緣故而是固定的。
+如每 一個貢獻者能夠寫一個某個Unix工具的相容替代品，讓它在Unix下能正確的取代原
+來程式的工作，那麼這些工具集合在一起時便能正常工作。 即使讓莫非定律再製造一些
+出乎意料的問題，把這些部份組合起來仍然 是件可行的工作。（系統核心的工作就需要
+較密切的溝通，且只有一群 緊密的小組能夠參加）
+
+If I get donations of money, I may be able to hire a few people full or part
+time. The salary won't be high by programmers' standards, but I'm looking for
+people for whom building community spirit is as important as making money. I
+view this as a way of enabling dedicated people to devote their full energies
+to working on GNU by sparing them the need to make a living in another way.
+
+如果有人貢獻金錢，那麼我就能夠請幾個全職或臨時的人。以程式師的 標準來說，這薪
+水不是很高，但是我要找的是那些認為建立社區意識 [community spirit]和賺錢一樣重
+要的人。我認為提供奉獻的人另一種 維持生計的方式是使他們能夠全心全力投入GNU 工
+作的一種方法。
+
+
+Why All Computer Users Will Benefit
+為什麼所有的電腦使用者都會受益
+Once GNU is written, everyone will be able to obtain good system software
+free, just like air.
+
+只要GNU 一寫好，每個人都能夠自由的取得優良的系統軟體，就像空氣一 樣。
+
+This means much more than just saving everyone the price of a Unix license. It
+means that much wasteful duplication of system programming effort will be
+avoided. This effort can go instead into advancing the state of the art.
+
+這不只是僅僅省下大家一筆Unix的版權費而已。這更意味著大家可以避 免白白浪費掉重
+複設計系統的工作。這省下來的力氣可以轉而增進此系 統的技術層次與品質。[ the
+state of the art. ]
+
+Complete system sources will be available to everyone. As a result, a user who
+needs changes in the system will always be free to make them himself, or hire
+any available programmer or company to make them for him. Users will no longer
+be at the mercy of one programmer or company which owns the sources and is in
+sole position to make changes.
+
+每一個人都能取得完整的程式碼。因此，需要更改系統的使用者總是能 自由的自行修改
+之，或雇用任何能夠勝任的程式師或公司來替他做這件 事。使用者不在需要看某一個擁有
+原始碼的程式師或公司的臉色─如果 只有他們想作些更改的話。
+
+Schools will be able to provide a much more educational environment by
+encouraging all students to study and improve the system code. Harvard's
+computer lab used to have the policy that no program could be installed on the
+system if its sources were not on public display, and upheld it by actually
+refusing to install certain programs. I was very much inspired by this.
+
+學校將能夠透過鼓勵所有的學生學習及改進程式碼的方式提供更富教育性 的環境。哈佛
+的電腦實驗室曾經有這樣一個政策：不允許一個不能公開展 示原始碼的程式安裝到系統裡
+面，而且拒絕安裝某些程式以展示貫徹的決 心。我從這件事得到不少啟發。
+
+Finally, the overhead of considering who owns the system software and what one
+is or is not entitled to do with it will be lifted.
+
+最後，誰該擁有這個系統軟體的顧慮及誰被允許或不允許運用這軟體做什 麼事的限制都
+會解除。
+
+Arrangements to make people pay for using a program, including licensing of
+copies, always incur a tremendous cost to society through the cumbersome
+mechanisms necessary to figure out how much (that is, which programs) a person
+must pay for. And only a police state can force everyone to obey them.
+Consider a space station where air must be manufactured at great cost:
+charging each breather per liter of air may be fair, but wearing the metered
+gas mask all day and all night is intolerable even if everyone can afford to
+pay the air bill. And the TV cameras everywhere to see if you ever take the
+mask off are outrageous. It's better to support the air plant with a head tax
+and chuck the masks.
+
+為了使使用程式者付費，包括授權數量，必須透過累贅的機制來測量使用 者需要為哪個程
+式付出多少錢，總是使社會付出大量的成本。而且只有警 方能使每個人都遵守之。考慮
+一個必須用很高的成本製造空氣的太空站： 對每呼吸一升空氣收費可能蠻公平的，但是成
+天帶著空氣記錄器的口罩是 無法忍受的，即使每個人都有能力付空氣費。而且到處都是
+監視器檢查你 是否拿掉呼吸罩是一種侮辱。這還不如拿掉面罩，算人頭繳稅還比較好。
+
+Copying allor parts of a program is as natural to a programmer as breathing,
+and as productive. It ought to be as free.
+
+拷貝大部份或部份的程式對一個程式師而言是和呼吸一樣自然且具 有生產力的事。
+這應該是和呼吸一樣自由的。
+
+
+Some Easily Rebutted Objections to GNU's Goals
+一些 GNU 的理想容易遭受反駁的地方
+
+"Nobody will use it if it is free, because that means they can't rely on any
+support."
+『如果它是免費的話就沒有人會用它，因為這表示 他們沒有任何協助可以依賴。』
+"You have to charge for the program to pay for providing the support."
+『你必須對程式收費，用來支持提供支援服務所需之費用。』
+If people would rather pay for GNU plus service than get GNU free without
+service, a company to provide just service to people who have obtained GNU
+free ought to be profitable.
+
+如果有人寧願花錢買有售後服務的GNU 而非免費得到沒有服務的GNU ， 一家專門為那些
+免費拿到GNU 的人提供服務的公司應該會很賺錢。
+
+We must distinguish between support in the form of real programming work and
+mere handholding. The former is something one cannot rely on from a software
+vendor. If your problem is not shared by enough people, the vendor will tell
+you to get lost.
+
+我們必須辨別程式維修支援和純服務支援方式上的不同。前者是軟體公 司所不 能依靠的
+。如果沒有足夠多的人和你有相同的問題，軟體公司 可能會讓你陷入無助之地。
+
+If your business needs to be able to rely on support, the only way is to have
+all the necessary sources and tools. Then you can hire any available person to
+fix your problem; you are not at the mercy of any individual. With Unix, the
+price of sources puts this out of consideration for most businesses. With GNU
+this will be easy. It is still possible for there to be no available competent
+person, but this problem cannot be blamed on distribution arrangements. GNU
+does not eliminate all the world's problems, only some of them.
+
+如果你的事業需要倚靠支援服務，唯一的方法就是準備好一切所需的原始碼 和工具。然後
+你可以聘請任何一位可以勝任的人來解決你的問題。你不 須任由某人擺佈。就UNIX而言
+，原始碼的價錢讓大部分的企業無法考慮 這種作法。用GNU 的話這就很容易了。但是還是
+有可能找不到可以勝任 的人的情況，但是這個問題不能怪罪傳播的方法。GNU 並沒有
+解決世界 上所有的問題，只是其中的一部份而已。
+
+Meanwhile, the users who know nothing about computers need handholding: doing
+things for them which they could easily do themselves but don't know how.
+
+同時，對電腦一無所知得使用者須要幫助與服務：為他們做一些他們自己能輕 易做到，但
+不曉得如何做的事。
+
+Such services could be provided by companies that sell just hand-holding and
+repair service. If it is true that users would rather spend money and get a
+product with service, they will also be willing to buy the service having got
+the product free. The service companies will compete in quality and price;
+users will not be tied to any particular one. Meanwhile, those of us who don't
+need the service should be able to use the program without paying for the
+service.
+
+這樣子的服務可以由專門維修服務的公司提供。如果使用者真的寧願花 錢買一個有售後
+服務的軟體，他們也將願意為免費得到的軟體買些服務 。這些服務公司會在品質和價錢
+上競爭；使用者將不會受限於特定的一 家公司。同時，我們這些不須要服務的人也能夠
+自由的使用程式而不須 要花錢在服務上。
+
+
+"You cannot reach many people without advertising, and you must charge for the
+program to support that."
+『沒有廣告的話你就沒辦法讓很多人知道你的東西， 而你必須對程式收錢以支持廣告經
+費。』
+"It's no use advertising a program people can get free."
+『廣告一個別人可以免費得到的程式是沒有用的。』
+There are various forms of free or very cheap publicity that can be used to
+inform numbers of computer users about something like GNU. But it may be true
+that one can reach more microcomputer users with advertising. If this is
+really so, a business which advertises the service of copying and mailing GNU
+for a fee ought to be successful enough to pay for its advertising and more.
+This way, only the users who benefit from the advertising pay for it.
+
+有多種形式免費的或很便宜的傳播媒介可以用來讓不少的電腦使用者知 道像GNU 之類的
+事。可是刊登廣告可以觸及更多微電腦的使用者可能是 真的。如果是這樣的話，一個刊登
+廣告提供拷貝及郵購GNU 的事業應該 可以賺得遠超過它所投資的廣告費。在這種機制下
+，只有從廣告中獲益 的使用者才須要為之付費。
+
+On the other hand, if many people get GNU from their friends, and such
+companies don't succeed, this will show that advertising was not really
+necessary to spread GNU. Why is it that free market advocates don't want to
+let the free market decide this?
+
+另一方面，如果很多人透過朋友拿到GNU ，而上述的事業沒有成功，這 就顯示了GNU 並
+不須要借助廣告來傳播。為什麼自由市場的擁護者不讓 自由市場決定這件事？
+
+
+"My company needs a proprietary operating system to get a competitive edge."
+『我的公司需要一個專屬的作業系統才能夠較有競爭力。』
+GNU will remove operating system software from the realm of competition. You
+will not be able to get an edge in this area, but neither will your
+competitors be able to get an edge over you. You and they will compete in
+other areas, while benefitting mutually in this one. If your business is
+selling an operating system, you will not like GNU, but that's tough on you.
+If your business is something else, GNU can save you from being pushed into
+the expensive business of selling operating systems.
+
+GNU 將會把系統軟體移出競爭的領域。你將無法在這方面佔有優勢，但同 樣的你的對手也
+無法在這方面勝過你。你和他們會在其他方面競爭，而在 這方面互相獲益。如果你的事
+業就是賣作業系統，你大概不會喜歡GNU ， 不過這會很為難你。如果你的事業是其他方面
+的話，GNU 可以讓你省下研 發作業系統所需要的昂貴經費。
+
+I would like to see GNU development supported by gifts from many manufacturers
+and users, reducing the cost to each.
+
+我希望能見到GNU 的發展受到許多製造商及使用者的支持，以減低雙方的 發費。
+
+
+"Don't programmers deserve a reward for their creativity?"
+『難道程式師不應該從他的創造力獲得回報嗎？』
+If anything deserves a reward, it is social contribution. Creativity can be a
+social contribution, but only in so far as society is free to use the results.
+If programmers deserve to be rewarded for creating innovative programs, by the
+same token they deserve to be punished if they restrict the use of these
+programs.
+
+如果有甚麼事值得回報的話，那非貢獻社會莫數了。創造力可以是一種 對社會的貢獻，但
+是必須以社會能夠自由使用其結果為限。如果程式師 因寫出創新的程式就應得到報酬的
+話，同理如果他們對這些程式的使用 設限的話，他們也該受罰。
+
+
+"Shouldn't a programmer be able to ask for a reward for his creativity?"
+『難道程式師不能為他的創造力要求報酬嗎？』
+There is nothing wrong with wanting pay for work, or seeking to maximize one's
+income, as long as one does not use means that are destructive. But the means
+customary in the field of software today are based on destruction.
+
+希望工作有薪水拿，或是使自己有最大的收入並沒有什麼不對的，只要 不要用破壞性的手
+段就可以了。但是在現今軟體領域內常用的手段卻都 是以破壞/沒建設性的手段為依歸的
+。
+
+Extracting money from users of a program by restricting their use of it is
+destructive because the restrictions reduce the amount and the ways that the
+program can be used. This reduces the amount of wealth that humanity derives
+from the program. When there is a deliberate choice to restrict, the harmful
+consequences are deliberate destruction.
+
+藉著限制一個程式的使用者的使用範圍來獲取金錢是具有破壞性的，因 為那些限制減少
+了程式的應用範圍。這減少了人類能由此程式所得到的 財富。如果可以任意設定限制的話
+，其惡果就是任意的破壞。
+
+The reason a good citizen does not use such destructive means to become
+wealthier is that, if everyone did so, we would all become poorer from the
+mutual destructiveness. This is Kantian ethics; or, the Golden Rule. Since I
+do not like the consequences that result if everyone hoards information, I am
+required to consider it wrong for one to do so. Specifically, the desire to be
+rewarded for one's creativity does not justify depriving the world in general
+of all or part of that creativity.
+
+一個好公民不會用這麼有破壞性的手段來致富的原因是，如果大家都這 樣做的話，我們
+會因為彼此的互相攻擊而變得更窮。這是不變的真理， 或者說是金科玉律。因為我不願見
+到每個人都藏私的後果，所以我認為 這樣做是不對的。特別是，想要由創造力獲得報酬的
+慾望並不能當成利用 此創新來撥削這個世界的借口。
+
+
+"Won't programmers starve?"
+『程式師會沒工作而挨餓嗎?』
+I could answer that nobody is forced to be a programmer. Most of us cannot
+manage to get any money for standing on the street and making faces. But we
+are not, as a result, condemned to spend our lives standing on the street
+making faces, and starving. We do something else.
+
+我可以回答說，沒有人被強迫當程式師啊！我們一般人沒辦法站在街上 扮鬼臉就可以賺
+錢的。但是我們也因此不是注定要一輩子站在街上扮鬼 臉，然後挨餓。我們還做其他的
+事。
+
+But that is the wrong answer because it accepts the questioner's implicit
+assumption: that without ownership of software, programmers cannot possibly be
+paid a cent. Supposedly it is all or nothing.
+
+可是這種回答是錯誤的，因為它認同問題本身隱含的假設：如果沒有一 套軟體的所有權
+的話，沒有人會付程式師一毛錢。在大家的想像裡，這 好像是用二分法分開的，不是全有
+，就是全無。
+
+The real reason programmers will not starve is that it will still be possible
+for them to get paid for programming; just not paid as much as now.
+
+讓程式師不會挨餓的真正原因是他們仍然可以靠設計程式賺錢。只是沒 有像現在那麼多
+罷了。
+
+Restricting copying is not the only basis for business in software. It is the
+most common basis because it brings in the most money. If it were prohibited,
+or rejected by the customer, software business would move to other bases of
+organization which are now used less often. There are always numerous ways to
+organize any kind of business.
+
+限制軟體的拷貝並不是做軟體生意的唯一手段。這是最常用的方法因為 這樣子賺最多錢
+。如果這種方法被限制，或者被客戶拒絕的話，軟體事 業就會用其他現在比較少用的方法
+。世上永遠有很多種方法來組織任何 一種事業的。
+
+Probably programming will not be as lucrative on the new basis as it is now.
+But that is not an argument against the change. It is not considered an
+injustice that sales clerks make the salaries that they now do. If programmers
+made the same, that would not be an injustice either. (In practice they would
+still make considerably more than that.)
+
+在此新的環境中，程式設計可能不再像現在有這麼高的利潤。但是這不 是用來反對這種
+改變的理由。沒有人認為銷售員目前的薪水是不公平的 ，如果程式師賺一樣多錢，那也
+不會不公平了。（事實上，他們仍然可 以賺比這樣多很多的錢。）
+
+
+"Don't people have a right to control how their creativity is used?"
+『難道人們不應有控制他們的創造力該如何運用的權力嗎?』
+"Control over the use of one's ideas" really constitutes control over other
+people's lives; and it is usually used to make their lives more difficult."
+
+"控制某人如何運用他的點子" 實際上包含了控制他人的生活; 而且通常會使得他們的日
+子更難過。"
+
+People who have studied the issue of intellectual property rights carefully
+(such as lawyers) say that there is no intrinsic right to intellectual
+property. The kinds of supposed intellectual property rights that the
+government recognizes were created by specific acts of legislation for
+specific purposes.
+
+像律師等仔細研究過智慧財產權問題的人認為實際上智慧財產權並非固 有的( 天生的)
+權力。政府所認同的那種智慧財產權是為了特定的目的 而透過特別的立法程序創造出來的
+。
+
+For example, the patent system was established to encourage inventors to
+disclose the details of their inventions. Its purpose was to help society
+rather than to help inventors. At the time, the life span of 17 years for a
+patent was short compared with the rate of advance of the state of the art.
+Since patents are an issue only among manufacturers, for whom the cost and
+effort of a license agreement are small compared with setting up production,
+the patents often do not do much harm. They do not obstruct most individuals
+who use patented products.
+
+舉例而言, 專利制度是為了鼓勵發明者公開他們的發明的詳細內容而設 的。他的目的是
+為了幫助整個社會，而不是發明者。在那時候17年的專 利有效期相對於科技的進步是相當
+短的。因為專利權只是製造商之間的 問題，而且對他們而言，簽一個專利合約的負擔和量
+產比較可以說很小 ，所以專利權對他們而言通常不會有什麼傷害。他們沒有妨礙到使
+用專利產品的個人。
+
+The idea of copyright did not exist in ancient times, when authors frequently
+copied other authors at length in works of non-fiction. This practice was
+useful, and is the only way many authors' works have survived even in part.
+The copyright system was created expressly for the purpose of encouraging
+authorship. In the domain for which it was invented--books, which could be
+copied economically only on a printing press--it did little harm, and did not
+obstruct most of the individuals who read the books.
+
+古時候並沒有智慧財產權的概念，有一段很長的時間在非小說的領域裡 面，作者常常引
+用他人的作品。這種動作是非常有用的，而且這也是很 多作者的作品能夠部份被保留下
+來的唯一途徑。智慧財產權系統原是設 立來鼓勵創作的。在智慧財產權原先發明的領
+域（書籍）內，只有印刷公司才能很經濟的大量複製的情況下，它並沒有什麼害處
+
+All intellectual property rights are just licenses granted by society because
+it was thought, rightly or wrongly, that society as a whole would benefit by
+granting them. But in any particular situation, we have to ask: are we really
+better off granting such license? What kind of act are we licensing a person
+to do?
+
+所有的智慧財產權只不過是社會所給予的權限，因為不管這樣子的想法 是否正確，一般
+認為給予這個權利可以對這整個社會有所幫助。但是 我們必須個案思考：我們給予這些
+權利後真的變得更好了嗎？我們到 底允取了什麼範圍的授權？
+
+The case of programs today is very different from that of books a hundred
+years ago. The fact that the easiest way to copy a program is from one
+neighbor to another, the fact that a program has both source code and object
+code which are distinct, and the fact that a program is used rather than read
+and enjoyed, combine to create a situation in which a person who enforces a
+copyright is harming society as a whole both materially and spiritually; in
+which a person should not do so regardless of whether the law enables him to.
+
+以今日程式軟體的情況而言，是與一百年前的書籍的情況迥然不同的。 拷貝一個程式最
+簡單的方法就是向鄰近的人索取，一個程式有本質互異 的原始碼與目的碼，以及一個程式
+是拿來用的，而不是用來閱讀與娛樂 的本質，結合在一起形成了一個特殊的情況；那就是
+一個人如果強行施 用智慧財產權的話，就會對整個社會，不論是物質上或者是精神上，
+造 成傷害。所以一個人不應該這樣做，不管法律允不允許他這麼做。
+
+
+"Competition makes things get done better."
+『競爭可以促進進步』
+The paradigm of competition is a race: by rewarding the winner, we encourage
+everyone to run faster. When capitalism really works this way, it does a good
+job; but its defenders are wrong in assuming it always works this way. If the
+runners forget why the reward is offered and become intent on winning, no
+matter how, they may find other strategies--such as, attacking other runners.
+If the runners get into a fist fight, they will all finish late.
+
+競爭的典型例子就是賽跑了：透過給予勝利者獎品，我們鼓勵大家跑快 一點。資本
+主義就是這樣運作的，而且這種機制做的不錯；但是他的支 持者卻犯了一個錯誤，就是
+假設這種機制永遠是可行的。假設競跑者忘 了給獎品的功用，而只求勝利的話，無論如何
+，他們可能會使用其他的 手段─如，攻擊其他的跑者。如果賽跑變成了一場拳架的話，那
+大家都 會花更多的時間到達終點。
+
+Proprietary and secret software is the moral equivalent of runners in a fist
+fight. Sad to say, the only referee we've got does not seem to object to
+fights; he just regulates them ("For every ten yards you run, you are allowed
+one kick."). He really ought to break them up, and penalize runners for even
+trying to fight.
+
+專屬軟體與秘密軟體就是道德上等價於拳架中的跑者。我很難過的說， 目前發現的唯一
+調停者好像並不反對打架；他僅僅節制他們而已（你每 跑十碼，可以踢一下）他真的
+應該把他們架開，然後懲罰那些甚至僅有 打架意圖的跑者。
+
+
+"Won't everyone stop programming without a monetary incentive?"
+『會不會因為沒有金錢上的誘因而大家都停止寫程式了呢？』
+Actually, many people will program with absolutely no monetary incentive.
+Programming has an irresistible fascination for some people, usually the
+people who are best at it. There is no shortage of professional musicians who
+keep at it even though they have no hope of making a living that way.
+
+實際上，有很多的人即使沒有任何的酬勞也願意寫程式。寫程式對某些 人而言具有著難
+以抗拒的吸引力，通常是那些很精通寫程式的那群。即 使這樣做幾乎不可能以此維持他
+們的生計，但是也從來不缺乏維持這種 原則的專業級音樂家。
+
+But really this question, though commonly asked, is not appropriate to the
+situation. Pay for programmers will not disappear, only become less. So the
+right question is, will anyone program with a reduced monetary incentive? My
+experience shows that they will.
+
+但是雖然這個問題常常被問到，卻不是實際上會發生的狀況。付費給程 式師的狀況不可
+能會消失，只是會便少而已。所以正確的問題應該是， 有人願意為一個較少的酬勞寫程
+式嗎？我的經驗告訴我真的有人願意。
+
+For more than ten years, many of the world's best programmers worked at the
+Artificial Intelligence Lab for far less money than they could have had
+anywhere else. They got many kinds of non-monetary rewards: fame and
+appreciation, for example. And creativity is also fun, a reward in itself.
+
+有超過十年的時間，全世界有很多頂尖的程式設計者在ＭＩＴ的人工智 慧實驗室工作；
+並且拿了較別處少的錢。他們得到了很多非金錢上的回 饋，例如：名譽和激賞。而且創
+造也很有趣，它本身就是一種報酬。
+
+Then most of them left when offered a chance to do the same interesting work
+for a lot of money.
+
+然後他們之中的大部分如果能得到一個一樣有趣，而且有很多錢的工作 機會時就離去了
+。
+
+What the facts show is that people will program for reasons other than riches;
+but if given a chance to make a lot of money as well, they will come to expect
+and demand it. Low-paying organizations do poorly in competition with
+high-paying ones, but they do not have to do badly if the high-paying ones are
+banned.
+
+這個事實顯示了人還是會為了財富以外的東西寫程式；但是如果有個賺 大錢的機會，那
+他們就會期待、爭求它。薪資低的組織的競爭力一定比 薪資高的組織差，但是如果禁止
+高薪政策的話那就不一定較差的。
+
+
+"We need the programmers desperately. If they demand that we stop helping our
+neighbors, we have to obey."
+『我們非常迫切的需要程式員。如果他們要我們停止幫助鄰近的夥伴的話，我們就要聽他
+們的話。』
+You're never so desperate that you have to obey this sort of demand. Remember:
+millions for defense, but not a cent for tribute!
+
+你永遠不會迫切到必須遵從這種要求的地步。記住一句話：寧願花幾百 萬來做防禦工事，
+也不願進貢一分錢。(millions for defense, but not a cent for tribute!)
+
+
+"Programmers need to make a living somehow."
+『無論如何程式設計師也要維持生計啊!』
+In the short run, this is true. However, there are plenty of ways that
+programmers could make a living without selling the right to use a program.
+This way is customary now because it brings programmers and businessmen the
+most money, not because it is the only way to make a living. It is easy to
+find other ways if you want to find them. Here are a number of examples.
+
+短程而言，這是真的。無論如何，程式師還有很多不需要販賣軟體使用 權也可以維持生計
+的方法。販賣軟體使用權是目前普遍的方法是因為它 幫程式師和商人賺最多的錢，而不
+是因為他是維持生計的唯一方法。如 果你願意找其他方法的話也很容易。這裡就有幾個
+範例：
+
+A manufacturer introducing a new computer will pay for the porting of
+operating systems onto the new hardware.
+
+一個製造出新的電腦系統的製造商要負責出移植作業系統到新機器的錢。
+
+The sale of teaching, hand-holding and maintenance services could also employ
+programmers.
+
+教學、軟體維修等服務也需要程式師。
+
+People with new ideas could distribute programs as freeware, asking for
+donations from satisfied users, or selling hand-holding services. I have met
+people who are already working this way successfully.
+
+有新點子的人可以把他們的程式以freeware的形式流出，然後要求滿意 的使用者捐獻，
+或者是提供支援服務等。我遇過用這種方法闖出一片 天地的人。
+
+Users with related needs can form users' groups, and pay dues. A group would
+contract with programming companies to write programs that the group's members
+would like to use.
+
+有相同需求的使用者可以組成使用者組織，然後繳會費。一個團體可以和 程式設計公司前
+合約寫一些該組織成員有興趣使用的軟體。
+
+All sorts of development can be funded with a Software Tax:
+
+各種的研發工作可以由軟體稅的基金支持。
+
+Suppose everyone who buys a computer has to pay x percent of the price as a
+software tax. The government gives this to an agency like the NSF to spend on
+software development.
+
+假設每個買電腦的人都要付ｘ％的錢作為軟體稅。然後政府把這筆錢交 給一個類似FSF的
+組織負責軟體的發展。
+
+But if the computer buyer makes a donation to software development himself, he
+can take a credit against the tax. He can donate to the project of his own
+choosing--often, chosen because he hopes to use the results when it is done.
+He can take a credit for any amount of donation up to the total tax he had to
+pay.
+
+但是如果電腦購買者對軟體的發展有所貢獻的話，那他可以減稅。他可 以自己選擇要貢
+獻哪個計畫─通常選那些他最希望能夠做到的計畫。減 稅可以依貢獻程度減到抵消
+掉全部的稅為止。
+
+The total tax rate could be decided by a vote of the payers of the tax,
+weighted according to the amount they will be taxed on.
+
+而軟體稅率可依總納稅額決定，其比重可以由納稅人投票決定。
+
+The consequences:
+
+the computer-using community supports software development.
+this community decides what level of support is needed.
+users who care which projects their share is spent on can choose this for
+themselves.
+這樣的結果是:
+
+電腦的使用者團體支持軟體的發展。
+此團體決定該有什麼樣程度的支援。
+那些關心自己需求的計畫的使用者可以參加該計畫的進行。
+In the long run, making programs free is a step toward the post-scarcity
+world, where nobody will have to work very hard just to make a living. People
+will be free to devote themselves to activities that are fun, such as
+programming, after spending the necessary ten hours a week on required tasks
+such as legislation, family counseling, robot repair and asteroid prospecting.
+There will be no need to be able to make a living from programming.
+
+長遠來看，免費的提供軟體是邁向不虞匱乏的世界的一步驟，在那世界 裡沒有人需要為了
+生計而辛勤的工作。在每個星期花了固定的十小時做 些必要的工作，如立法、家庭會議
+、修理機器人和探索小型星後，大家 會有時間從事些有趣的活動，例如寫程式。那時候
+就不須要靠寫程式來 過活了。
+
+We have already greatly reduced the amount of work that the whole society must
+do for its actual productivity, but only a little of this has translated
+itself into leisure for workers because much nonproductive activity is
+required to accompany productive activity. The main causes of this are
+bureaucracy and isometric struggles against competition. Free software will
+greatly reduce these drains in the area of software production. We must do
+this, in order for technical gains in productivity to translate into less work
+for us.
+
+我們（利用現有的科技）已經大量減少了達到目前生產力所需要的工作 量，但是只有其中
+的一部份轉化成工作者的閒暇，因為要達到有生產力 的活動往往伴隨著很多沒有生產力
+的活動。主要的肇因是官僚系統和各 種角力對競爭的阻礙。自由軟體的觀念在軟體的生
+產上可以大大的減少 這些羈絆。為了使科技對生產力的增益能實質上減少我們的工作量，
+我 們必須這麼做[GNU計劃]。
+
+
+------------------------------------------------------------------------------
+--
+Copyright (C) 1985 Richard M. Stallman
+本文版權為Richard M. Stallman所有, Copyright (C) 1985
+Permission is granted to anyone to make or distribute verbatim copies of this
+document as received, in any medium, provided that the copyright notice and
+permission notice are preserved, and that the distributor grants the recipient
+permission for further redistribution as permitted by this notice.
+
+任何人在拿到這文件的同時便受予他以任何媒體複製與傳播本文章 沒有更改的原文的權
+利，前題是本版權宣告與授權聲明必須保留不 動，而且散播者必須受予接受者如同本
+聲明一樣再次傳播的權利。
+
+Modified versions may not be made.
+
+本文不允許任何更改。
+※ X-Info: meowmeow -> changcs@santos.ee.ntu.edu.tw
+※ X-Sign: 0TBBE7UFYgbDAm2t/JXo (01/03/19 15:45:02 )
